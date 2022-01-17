@@ -1,0 +1,81 @@
+body {
+  font-family:"Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+}
+
+.background {
+  background-image: url(background_image.jpg);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.left-contents {
+  width: 50%;
+  padding: 33px 29px;
+}
+
+.catchphrase {
+  font-size: 80px;
+  font-weight: bold;
+  color: #FFFFFF;
+  line-height: 125%;
+}
+
+.right-contents {
+  width: 50%;
+  margin: 100px auto 0;
+}
+
+.logo {
+  text-align: center;
+}
+
+.container {
+  background-color: #333333;
+  width: 506px;
+  height: 440px;
+  border-radius: 29px;
+  padding: 46px 39px;
+  color: #CCCCCC;
+  margin: 66px auto 0;
+}
+
+.box {
+  width: 428px;
+  height: 45px;
+  margin-bottom: 12px;
+  padding: 0 5px;
+}
+
+.log-in-btn {
+  width: 428px;
+  height: 45px;
+  background-color: #61B6FF;
+  color: #333333;
+  letter-spacing: 0.1em;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  margin: 30px 0 25px;
+  cursor: pointer;
+}
+
+.registration a {
+  width: 428px;
+  height: 45px;
+  background-color: #FF7158;
+  color: #333333;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 14px 115px;
+}
+
+.footer {
+  font-size: 20px;
+  font-family: myriad;
+  color: #808080;
+  text-align: center;
+  margin-top: 100px;
+}
