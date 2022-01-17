@@ -17,6 +17,7 @@ Rails 6.0.4.4
 | email    | string    | null: false       |
 | password | string    | null: false       |
 | profile  | text      |                   |
+| icon     | string    |                   |
 
 ### Association
 
