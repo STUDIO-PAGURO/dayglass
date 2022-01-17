@@ -1,27 +1,40 @@
-<div class="catchphrase">
-  それはほぼ、<br />
-  今日の出来事。
-</div>
-<div class="logo">
-</div>
-<div class="container">
-  <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
-    <div class="field">
-      <%= f.label :Eメール %><br />
-      <%= f.email_field :email, autofocus: true %>
+<div class="background">
+  <div class="left-contents">
+    <div class="catchphrase">
+      それはほぼ、<br />
+      今日の出来事。
     </div>
-    <div class="field">
-      <%= f.label :パスワード %><br />
-      <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+  <div class="right-contents">
+    <div class="logo">
+      <%= image_tag 'logo.png' %>
     </div>
-    <% if devise_mapping.rememberable? %>
-      <div class="field">
-        <%= f.check_box :remember_me %>
-        <%= f.label :次回から自動的にログインする %>
+    <div class="container">
+      <%= form_with model: @user, url: user_session_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+        <div class="field">
+          <%= f.label :Eメール %><br />
+          <%= f.email_field :email, autofocus: true, class: 'box', placeholder: 'メールアドレス' %>
+        </div>
+        <div class="field">
+          <%= f.label :パスワード %><br />
+          <%= f.password_field :password, autocomplete: "off", class: 'box', placeholder: 'パスワード' %>
+        </div>
+        <% if devise_mapping.rememberable? %>
+          <div class="field">
+            <%= f.check_box :remember_me %>
+            <%= f.label :次回から自動的にログインする %>
+          </div>
+        <% end %>
+        <div class="actions">
+          <%= f.submit "ログイン", class: 'log-in-btn' %>
+        </div>
+      <% end %>
+      <div class="actions registration">
+        <%= link_to "新規登録はこちらから", new_user_registration_path %>
       </div>
-    <% end %>
-    <div class="actions">
-      <%= f.submit "ログイン" %>
     </div>
-  <% end %>
+    <div class="footer">
+      ©2022 STUDIO PAGURO
+    </div>
+  </div>
 </div>
