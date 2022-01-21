@@ -29,7 +29,7 @@ body {
   margin: 100px auto 0;
 }
 
-.logo {
+.title-logo {
   text-align: center;
 }
 
@@ -80,4 +80,75 @@ body {
   color: #808080;
   text-align: center;
   margin-top: 100px;
+}
+
+.header {
+  background-color: #333333;
+  width: 100vw;
+  height: 66px;
+  display: flex;
+  align-items: center;
+}
+
+.center-area {
+  width: 666px;
+  margin-left: 447px;
+}
+
+.right-area {
+  width: 360px;
+}
+
+.right-area-content {
+  text-decoration: none;
+  color: #CCCCCC;
+}
+
+.logo {
+  width: 186px;
+  height: 41px;
+  margin-left: 13px;
+}
+
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  color: #CCCCCC;
+  padding-top: 43px;
+}
+
+.contents {
+  width: 1026px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-content {
+  
+}
+
+.recommendation {
+  background-color: #333333;
+  width: 333px;
+  height: 333px;
+}
+
+.upper-content {
+  height: 70px;
+  display: flex;
+}
+
+.user-icon {
+  width: 44px;
+  height: 44px;
+}
+
+.content {
+  width: 666px;
+  background-color: #333333;
+  padding: 13px;
+  margin-bottom: 30px;
 }
