@@ -1,0 +1,10 @@
+<div class="contents">
+  <% @posts.each do |post| %>
+    <div class="content_post">
+      <p><%= post.text %></p>
+      <span class="name">
+        <%= post.user.name %>
+      </span>
+    </div>
+  <% end %>
+</div>
