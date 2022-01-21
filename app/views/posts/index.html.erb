@@ -1,10 +1,54 @@
-<div class="contents">
-  <% @posts.each do |post| %>
-    <div class="content_post">
-      <p><%= post.text %></p>
-      <span class="name">
-        <%= post.user.name %>
-      </span>
+<header class="header">
+  <div class="center-area">
+    <%= link_to image_tag("logo.png", class: "logo"), "/" %>
+  </div>
+  <div class="right-area">
+    <% if user_signed_in? %>
+      <div class="user_nav grid-6">
+        <span><%= current_user.nickname %>
+          <ul class="user__info">
+            <li>
+              <%= link_to "マイページ", "/users/#{current_user.id}" %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+            </li>
+          </ul>
+        </span>
+        <%= link_to "投稿する", new_tweet_path, class: "right-area-content" %>
+      </div>
+    <% else %>
+      <div class="grid-6">
+        <%= link_to "ログイン", new_user_session_path, class: "right-area-content" %>
+        <%= link_to "新規登録", new_user_registration_path, class: "right-area-content" %>
+      </div>
+    <% end %>
+  </div>
+</header>
+
+<div class="wrapper">
+  <div class="contents">
+    <div class="main-content">
+      <% @posts.each do |post| %>
+        <div class="content">
+          <div class="upper-content">
+            <div class="user-icon">
+              ◎
+            </div>
+            <div class="user-area">
+              <span class="name">
+                  <%= post.user.name %>
+              </span>
+              <div class="limit-time">
+                6時間
+              </div>
+            </div>
+          </div>
+          <div class="content_post">
+            <p><%= post.text %></p>
+          </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+    <div class="recommendation">
+    </div>
+  </div>
 </div>
