@@ -4,7 +4,9 @@ body {
 
 .background {
   background-image: url(background_image.jpg);
-  width: 100vw;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100vh;
   display: flex;
 }
@@ -19,6 +21,7 @@ body {
   font-weight: bold;
   color: #FFFFFF;
   line-height: 125%;
+  text-shadow: 0 0 5px rgb(0 0 0 / 90%);
 }
 
 .right-contents {
@@ -74,7 +77,6 @@ body {
 
 .footer {
   font-size: 20px;
-  font-family: myriad;
   color: #808080;
   text-align: center;
   margin-top: 100px;
