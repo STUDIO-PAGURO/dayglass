@@ -11,6 +11,36 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header-contents">
+          <div class="left-header">
+            <%= link_to image_tag("logo.png", class: "logo"), "/" %>
+          </div>
+          <div class="right-header">
+            <% if user_signed_in? %>
+              <div class="user-nav">
+                <ul class="user__info">
+                  <li>
+                    <%= link_to current_user.name, "/users/#{current_user.id}" %>
+                    <%= link_to current_user.account, "/users/#{current_user.id}" %>
+                    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+                  </li>
+                </ul>
+                <%= link_to new_post_path, class: "new-post" do %>
+                <i class="uil uil-edit"></i>
+                <% end %>
+              </div>
+            <% else %>
+              <div class="grid-6">
+                <%= link_to "ログイン", new_user_session_path, class: "right-area-content" %>
+                <%= link_to "新規登録", new_user_registration_path, class: "right-area-content" %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </header>
+      <%= yield %>
+    </div>
   </body>
 </html>
