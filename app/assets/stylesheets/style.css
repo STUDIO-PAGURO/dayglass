@@ -86,13 +86,16 @@ body {
   background-color: #333333;
   width: 100vw;
   height: 66px;
+}
+
+.header-contents {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .center-area {
   width: 666px;
-  margin-left: 447px;
 }
 
 .right-area {
@@ -107,7 +110,7 @@ body {
 .logo {
   width: 186px;
   height: 41px;
-  margin-left: 13px;
+  margin: auto 13px;
 }
 
 .wrapper {
