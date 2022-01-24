@@ -4,10 +4,12 @@ span {
 
 a {
   color: #CCCCCC;
+  text-decoration: none;
 }
 
 body {
   font-family:"Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  color: #CCCCCC;
 }
 
 .background {
@@ -47,7 +49,6 @@ body {
   height: 440px;
   border-radius: 29px;
   padding: 46px 39px;
-  color: #CCCCCC;
   margin: 66px auto 0;
 }
 
@@ -92,6 +93,12 @@ body {
 
 /* タイムライン */
 
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+}
+
 .header {
   background-color: #333333;
   width: 100vw;
@@ -127,11 +134,9 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  text-decoration: none;
 }
 
 .user__info a {
-  text-decoration: none;
 }
 
 .new-post {
@@ -139,18 +144,12 @@ body {
 }
 
 .right-area-content {
-  text-decoration: none;
-  color: #CCCCCC;
   padding: 0 13px;
 }
 
-.wrapper {
-  width: 100vw;
-  height: 100vh;
+.main-contents {
   display: flex;
   justify-content: center;
-  background-color: black;
-  color: #CCCCCC;
   padding-top: 43px;
 }
 
@@ -173,6 +172,11 @@ body {
 .upper-content {
   height: 70px;
   display: flex;
+  justify-content: space-between;
+}
+
+.user-area {
+  display: flex;
 }
 
 .user-icon {
@@ -180,9 +184,35 @@ body {
   height: 44px;
 }
 
+.more {
+}
+
 .content {
   width: 666px;
   background-color: #333333;
   padding: 13px;
   margin-bottom: 30px;
+}
+
+/* 投稿 */
+
+.post-form {
+  width: 666px;
+  background-color: #333333;
+  padding: 10px 30px;
+}
+
+.text-field {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.send-btn {
+  width: 100px;
+  height: 30px;
+  background-color: #CCCCCC;
+  color: #333333;
+  border: none;
+  display: block;
+  margin: 10px auto;
 }

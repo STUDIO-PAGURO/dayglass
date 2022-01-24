@@ -1,48 +1,37 @@
-<header class="header">
-  <div class="header-contents">
-    <div class="left-header">
-      <%= link_to image_tag("logo.png", class: "logo"), "/" %>
-    </div>
-    <div class="right-header">
-      <% if user_signed_in? %>
-        <div class="user-nav">
-          <ul class="user__info">
-            <li>
-              <%= link_to current_user.name, "/users/#{current_user.id}" %>
-              <%= link_to current_user.account, "/users/#{current_user.id}" %>
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-            </li>
-          </ul>
-          <%= link_to new_post_path, class: "new-post" do %>
-          <i class="uil uil-edit"></i>
-          <% end %>
-        </div>
-      <% else %>
-        <div class="grid-6">
-          <%= link_to "ログイン", new_user_session_path, class: "right-area-content" %>
-          <%= link_to "新規登録", new_user_registration_path, class: "right-area-content" %>
-        </div>
-      <% end %>
-    </div>
-  </div>
-</header>
-
-<div class="wrapper">
+<div class="main-contents">
   <div class="time-line">
     <div class="contents">
       <% @posts.each do |post| %>
         <div class="content">
           <div class="upper-content">
-            <div class="user-icon">
-              ◎
-            </div>
             <div class="user-area">
-              <span class="user-name">
-                  <%= post.user.name %>
-              </span>
-              <div class="limit-time">
-                6時間
+              <div class="user-icon">
+                ◎
               </div>
+              <div class="user">
+                <span class="user-name">
+                    <%= post.user.name %>
+                </span>
+                <div class="limit-time">
+                  6時間
+                </div>
+              </div>
+            </div>
+            <div class="more">
+              <i class="uil uil-ellipsis-h"></i>
+              <ul class="more_list">
+                <li>
+                  <%= link_to '詳細', post_path(post.id), method: :get %>
+                </li>
+                <% if user_signed_in? && current_user.id == post.user_id %>
+                  <li>
+                    <%= link_to '編集', edit_post_path(post.id), method: :get %>
+                  </li>
+                  <li>
+                    <%= link_to '削除', post_path(post.id), method: :delete %>
+                  </li>
+                <% end %>
+              </ul>
             </div>
           </div>
           <div class="content_post">
