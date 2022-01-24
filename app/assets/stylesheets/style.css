@@ -1,3 +1,11 @@
+span {
+  font-weight: bold;
+}
+
+a {
+  color: #CCCCCC;
+}
+
 body {
   font-family:"Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
 }
@@ -82,35 +90,58 @@ body {
   margin-top: 100px;
 }
 
+/* タイムライン */
+
 .header {
   background-color: #333333;
   width: 100vw;
   height: 66px;
+  display: flex;
+  justify-content: center;
 }
 
 .header-contents {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  width: 1026px;
 }
 
-.center-area {
+.left-header {
   width: 666px;
-}
-
-.right-area {
-  width: 360px;
-}
-
-.right-area-content {
-  text-decoration: none;
-  color: #CCCCCC;
+  padding: 0 13px;
 }
 
 .logo {
   width: 186px;
   height: 41px;
-  margin: auto 13px;
+  margin-top: 8px;
+}
+
+.right-header {
+  width: 360px;
+  padding: 0 13px;
+}
+
+.user-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+}
+
+.user__info a {
+  text-decoration: none;
+}
+
+.new-post {
+  font-size: 45px;
+}
+
+.right-area-content {
+  text-decoration: none;
+  color: #CCCCCC;
+  padding: 0 13px;
 }
 
 .wrapper {
@@ -123,13 +154,13 @@ body {
   padding-top: 43px;
 }
 
-.contents {
+.time-line {
   width: 1026px;
   display: flex;
   justify-content: space-between;
 }
 
-.main-content {
+.contents {
   
 }
 
