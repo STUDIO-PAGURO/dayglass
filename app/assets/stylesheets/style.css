@@ -25,6 +25,8 @@ body {
   font-size: 16px;
 }
 
+/* ログイン画面 */
+
 .background {
   background-image: url(background_image.jpg);
   background-position: center center;
@@ -62,12 +64,28 @@ body {
   height: 440px;
   border-radius: 29px;
   padding: 46px 39px;
-  margin: 66px auto 0;
+  margin: 66px auto 100px;
+}
+
+.new-container {
+  background-color: #333333;
+  width: 506px;
+  height: 465px;
+  border-radius: 29px;
+  padding: 25px 39px;
+  margin: 66px auto 75px;
 }
 
 .box {
   width: 428px;
   height: 45px;
+  margin-bottom: 12px;
+  padding: 0 5px;
+}
+
+.new-box {
+  width: 428px;
+  height: 36px;
   margin-bottom: 12px;
   padding: 0 5px;
 }
@@ -82,6 +100,19 @@ body {
   font-weight: bold;
   border: none;
   margin: 30px 0 25px;
+  cursor: pointer;
+}
+
+.sign-in-btn {
+  width: 428px;
+  height: 36px;
+  background-color: #FF7158;
+  color: #333333;
+  letter-spacing: 0.1em;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  margin-top: 10px;
   cursor: pointer;
 }
 
@@ -101,7 +132,7 @@ body {
   font-size: 20px;
   color: #808080;
   text-align: center;
-  margin-top: 100px;
+  display: block;
 }
 
 /* タイムライン */
