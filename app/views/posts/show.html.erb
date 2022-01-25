@@ -1,0 +1,35 @@
+<div class="main-contents">
+  <div class="detailed-content">
+    <div class="upper-content">
+      <div class="user-area">
+        <div class="user-icon">
+          ◎
+        </div>
+        <div class="user">
+          <span class="user-name">
+              <%= @post.user.name %>
+          </span>
+          <div class="limit-time">
+            6時間
+          </div>
+        </div>
+      </div>
+      <div class="more">
+        <i class="uil uil-ellipsis-h"></i>
+        <ul class="more_list">
+          <% if user_signed_in? && current_user.id == @post.user_id %>
+            <li>
+              <%= link_to '編集', edit_post_path(@post.id), method: :get %>
+            </li>
+            <li>
+              <%= link_to '削除', post_path(@post.id), method: :delete %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="detailed-content_post">
+      <p><%= @post.text %></p>
+    </div>
+  </div>
+</div>
