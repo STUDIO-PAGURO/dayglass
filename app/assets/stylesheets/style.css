@@ -1,12 +1,16 @@
 h1 {
-  font-size: 48px;
+  font-size: 80px;
 }
 
 h2 {
-  font-size: 36px;
+  font-size: 48px;
 }
 
 h3 {
+  font-size: 36px;
+}
+
+h4 {
   font-size: 24px;
 }
 
@@ -42,7 +46,6 @@ body {
 }
 
 .catchphrase {
-  font-size: 80px;
   font-weight: bold;
   color: #FFFFFF;
   line-height: 125%;
