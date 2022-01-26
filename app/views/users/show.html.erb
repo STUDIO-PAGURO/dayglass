@@ -28,44 +28,7 @@
         </div>
       </div>
       <% @posts.each do |post| %>
-        <div class="content">
-          <div class="upper-content">
-            <div class="user-area">
-              <div class="user-icon">
-                ◎
-              </div>
-              <div class="user">
-                <span class="user-name">
-                    <a href="/users/<%= post.user.id %>">
-                      <%= post.user.name %>
-                    </a>
-                </span>
-                <div class="limit-time">
-                  6時間
-                </div>
-              </div>
-            </div>
-            <div class="more">
-              <i class="uil uil-ellipsis-h"></i>
-              <ul class="more_list">
-                <li>
-                  <%= link_to '詳細', post_path(post.id), method: :get %>
-                </li>
-                <% if user_signed_in? && current_user.id == post.user_id %>
-                  <li>
-                    <%= link_to '編集', edit_post_path(post.id), method: :get %>
-                  </li>
-                  <li>
-                    <%= link_to '削除', post_path(post.id), method: :delete %>
-                  </li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-          <div class="content_post">
-            <p><%= post.text %></p>
-          </div>
-        </div>
+        <%= render partial: "posts/post", locals: { post: post } %>
       <% end %>
     </div>
     <div class="recommendation">
