@@ -1,6 +1,32 @@
 <div class="main-contents">
   <div class="time-line">
     <div class="contents">
+      <div class="user-info">
+        <div class="user-upper-content">
+          <div class="user-area2">
+            <div class="user-icon2">
+              ◎
+            </div>
+            <div class="user2">
+              <span class="user-name2">
+                <a href="/users/<%= @user.id %>">
+                  <%= @user.name %>
+                </a>
+              </span>
+              <p class="user-account"><%= @user.account %></p>
+              <p class="follow-count">88フォロー中 92フォロワー<p>
+            </div>
+          </div>
+          <% unless @user.id == current_user.id %>
+            <div class="follow-btn">
+                フォロー
+            </div>
+          <% end %>
+        </div>
+        <div class="user-profile">
+            <%= @profile %>
+        </div>
+      </div>
       <% @posts.each do |post| %>
         <div class="content">
           <div class="upper-content">
@@ -10,9 +36,9 @@
               </div>
               <div class="user">
                 <span class="user-name">
-                  <a href="/users/<%= post.user.id %>">
-                    <%= post.user.name %>
-                  </a>
+                    <a href="/users/<%= post.user.id %>">
+                      <%= post.user.name %>
+                    </a>
                 </span>
                 <div class="limit-time">
                   6時間
