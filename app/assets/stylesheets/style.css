@@ -251,6 +251,50 @@ body {
   font-size: 18px;
 }
 
+.user-info {
+  background-color: #333333;
+  width: 666px;
+  margin-bottom: 30px;
+  padding: 13px;
+}
+
+.user-area2 {
+  display: flex;
+}
+
+.user-icon2 {
+  width: 107px;
+  height: 107px;
+}
+
+.user-name2 {
+  font-size: 2em;
+  
+}
+
+.user-account {
+  font-size: 20px;
+}
+
+.user-upper-content {
+  height: 133px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.follow-btn {
+  width: 144px;
+  height: 46px;
+  border-radius: 23px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333333;
+  background-color: #CCCCCC;
+  display: grid;
+  place-items: center;
+  margin-top: 52px;
+}
+
 /* 投稿 */
 
 .post-form {
@@ -272,6 +316,8 @@ body {
   border: none;
   display: block;
   margin: 10px auto;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 .title {
