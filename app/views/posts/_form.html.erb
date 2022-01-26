@@ -1,0 +1,4 @@
+<%= form_with(model: post, local: true) do |form| %>
+  <%= form.text_area :text, placeholder: "投稿する…", rows: "10", class: "text-field" %>
+  <%= form.submit "投稿", class: "send-btn" %>
+<% end %>
