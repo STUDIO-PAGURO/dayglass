@@ -144,6 +144,7 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: black;
+  overflow: scroll;
 }
 
 .header {
@@ -152,6 +153,7 @@ body {
   height: 66px;
   display: flex;
   justify-content: center;
+  position: fixed;
 }
 
 .header-contents {
@@ -197,7 +199,7 @@ body {
 .main-contents {
   display: flex;
   justify-content: center;
-  padding-top: 43px;
+  padding-top: 109px;
 }
 
 .time-line {
@@ -242,7 +244,6 @@ body {
 }
 
 .detailed-content {
-  width: 1026px;
   background-color: #333333;
   padding: 13px;
 }
@@ -323,4 +324,14 @@ body {
 .title {
   text-align: center;
   margin-top: 10px;
+}
+
+.edit-page {
+  width: 1026px;
+  display: flex;
+  justify-content: center;
+}
+
+.row {
+  padding-top: 66px;
 }
