@@ -246,10 +246,12 @@ body {
 .detailed-content {
   background-color: #333333;
   padding: 13px;
+  width: 1026px;
 }
 
 .detailed-content_post {
   font-size: 18px;
+  margin-bottom: 20px;
 }
 
 .user-info {
@@ -334,4 +336,52 @@ body {
 
 .row {
   padding-top: 66px;
+}
+
+/* コメント */
+
+.reaction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.reaction-btn {
+  display: flex;
+}
+
+.form {
+  display: flex;
+}
+
+.comment-form {
+  width: 682px;
+  height: 37px;
+  background-color: #4D4D4D;
+  border: none;
+  padding: 5px 10px;
+  color: #CCCCCC;
+  font-size: 18px;
+}
+
+.comment-btn {
+  font-weight: bold;
+  padding: 0 5px;
+  margin-left: 13px;
+  background-color: #CCCCCC;
+  color: #333333;
+  border: none;
+  cursor: pointer;
+}
+
+.comment-area {
+  display: flex;
+  margin-top: 29px;
+}
+
+.comment {
+  background-color: #4D4D4D;
+  padding: 5px 10px;
+  border-radius: 13px;
+  width: fit-content;
 }

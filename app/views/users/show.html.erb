@@ -17,7 +17,7 @@
               <p class="follow-count">88フォロー中 92フォロワー<p>
             </div>
           </div>
-          <% unless @user.id == current_user.id %>
+          <% if user_signed_in? && current_user.id != @user.id %>
             <div class="follow-btn">
                 フォロー
             </div>
