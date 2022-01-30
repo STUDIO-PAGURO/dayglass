@@ -166,12 +166,23 @@ body {
 .left-header {
   width: 666px;
   padding: 0 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
   width: 186px;
   height: 41px;
   margin-top: 8px;
+}
+
+.search-input {
+  width: 290px;
+  height: 30px;
+  background-color: #999999;
+  border: none;
+  padding: 0 8px;
 }
 
 .right-header {
