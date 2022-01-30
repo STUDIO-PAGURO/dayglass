@@ -28,6 +28,7 @@
                   <li>
                     <%= link_to current_user.name, "/users/#{current_user.id}" %>
                     <%= link_to current_user.account, "/users/#{current_user.id}" %>
+                    <%= link_to %>
                     <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
                   </li>
                 </ul>
