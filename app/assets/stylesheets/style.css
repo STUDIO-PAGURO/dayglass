@@ -322,6 +322,18 @@ body {
   width: 100%;
 }
 
+.form-image {
+  background-color: #CCCCCC;
+  color: #333333;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
 .send-btn {
   width: 100px;
   height: 30px;

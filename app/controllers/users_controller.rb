@@ -4,4 +4,12 @@ class UsersController < ApplicationController
     @posts = @user.posts
     @profile = @user.profile
   end
+
+  def edit
+
+  end
+
+  def update
+    
+  end
 end
