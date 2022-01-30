@@ -3,7 +3,7 @@
     <div class="detailed-content">
       <div class="upper-content">
         <div class="user-area">
-          <div class="user-icon">
+          <div class="user-icon2">
             ◎
           </div>
           <div class="user">
@@ -33,6 +33,40 @@
       </div>
       <div class="detailed-content_post">
         <p><%= @post.text %></p>
+      </div>
+      <div class="reaction">
+        <% if user_signed_in? %>
+          <div class="reaction-btn">
+            <div class="heart">
+              ♡
+            </div>
+            <div class="comment2">
+              ∂
+            </div>
+            <div class="daygrass">
+              X
+            </div>
+          </div>
+          <div class="comment-form-area">
+            <%= form_with(model: [@post, @comment], class: "form", local: true) do |form| %>
+              <%= form.text_area :text, placeholder: "コメントする", rows: "1", class: "comment-form" %>
+              <%= form.submit "投稿する", class: "comment-btn" %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <div class="comments">
+        <% @comments.each do |comment| %>
+          <div class="comment-area">
+            <div class="user-icon">
+              ◎
+            </div>
+            <div class="comment">
+              <p><span><%= link_to comment.user.name, "/users/#{comment.user_id}" %></span>  ・・・5時間</p>
+              <%= comment.text %>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
