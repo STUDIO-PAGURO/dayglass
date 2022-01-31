@@ -9,9 +9,7 @@
             </div>
             <div class="user2">
               <span class="user-name2">
-                <a href="/users/<%= @user.id %>">
-                  <%= @user.name %>
-                </a>
+                <%= link_to @user.name, user_path(@user.id) %>
               </span>
               <p class="user-account"><%= @user.account %></p>
               <p class="follow-count">88フォロー中 92フォロワー<p>

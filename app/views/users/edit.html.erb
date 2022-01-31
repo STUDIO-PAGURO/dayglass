@@ -1,0 +1,41 @@
+<div class="main-contents">
+  <div class="time-line">
+    <div class="profile-edit">
+      <div class="profile-image-edit">
+        <div class="user-icon">
+          ◎
+        </div>
+        <div class="upper-profile-area">
+          <span class="profile-account"><%= current_user.account %></span>
+          <p><%= link_to "プロフィール写真を変更", "/" %></p> 
+        </div>
+        <div class="password-change">
+          <%= link_to "パスワードを変更する", root_path %>
+        </div>
+      </div>
+      <div class="user-form">
+        <%= form_with model: current_user, local: true do |f|%>
+          <div class="field">
+            <%= f.label :name, "名前" %>
+            <%= f.text_field :name, autofocus: true, class: "profile-box margin-l30" %>
+          </div>
+          <div class="field">
+            <%= f.label :account, "アカウント名" %>
+            <%= f.text_field :account, class: "profile-box margin-l30" %>
+          </div>
+          <div class="field">
+            <%= f.label :email, "Ｅメール" %>
+            <%= f.email_field :email, class: "profile-box margin-l30" %>
+          </div>
+          <div class="field">
+            <%= f.label :profile, "自己紹介" %>
+            <%= f.text_area :profile, class: "profile-box2 margin-l30" %>
+          </div>
+          <div class="actions">
+            <%= f.submit "保存する", class: "btn save-btn" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
