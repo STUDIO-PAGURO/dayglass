@@ -200,9 +200,6 @@ body {
   align-items: center;
 }
 
-.user__info a {
-}
-
 .setting {
   font-size: 20px;
 }
@@ -227,10 +224,17 @@ body {
   justify-content: space-between;
 }
 
-.recommendation {
+.recommendation-users {
   background-color: #333333;
   width: 333px;
   height: 333px;
+}
+
+.mini-footer {
+  text-align: center;
+  margin-top: 13px;
+  color: #333333;
+  font-size: 13px;
 }
 
 .upper-content {
