@@ -33,9 +33,9 @@
         <div class="form-field">
           <%= f.label :password, "パスワード" %>
           <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <em>(<%= @minimum_password_length %>文字以上)</em>
           <% end %><br />
-          <%= f.password_field :password, autocomplete: "new-password", class: "new-box", placeholder: "パスワードを入力してください" %>
+          <%= f.password_field :password, autocomplete: "new-password", class: "new-box", placeholder: "英字と数字の両方を含めてください" %>
         </div>
 
         <div class="form-field">
