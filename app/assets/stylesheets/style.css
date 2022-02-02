@@ -428,11 +428,11 @@ body {
 .profile-image-edit {
   display: flex;
   align-items: center;
-  margin-left: 125px;
+  justify-content: center;
 }
 
 .upper-profile-area {
-  margin-left: 30px;
+  margin-left: 40px;
 }
 
 .profile-account {
@@ -441,6 +441,8 @@ body {
 
 .user-form {
   margin-top: 50px;
+  display: flex;
+  justify-content: center;
 }
 
 .profile-box {

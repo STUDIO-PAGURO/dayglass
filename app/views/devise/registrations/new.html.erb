@@ -15,22 +15,22 @@
       <%= form_with model: @user, url: user_registration_path, id: "new_user", class: "new_user", local: true do |f| %>
         <%= devise_error_messages! %>
 
-        <div class="field">
+        <div class="form-field">
           <%= f.label :name, "名前 (必須)" %><br />
           <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "new-box", placeholder: "名前を入力してください" %>
         </div>
 
-        <div class="field">
+        <div class="form-field">
           <%= f.label :account, "アカウント名 (必須)" %><br />
           <%= f.text_field :account, autocomplete: "account", class: "new-box", placeholder: "アカウント名を入力してください" %>
         </div>
         
-        <div class="field">
+        <div class="form-field">
           <%= f.label :email, "Ｅメール (必須)" %><br />
           <%= f.email_field :email, autocomplete: "email", class: "new-box", placeholder: "メールアドレスを入力してください" %>
         </div>
 
-        <div class="field">
+        <div class="form-field">
           <%= f.label :password, "パスワード" %>
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
@@ -38,12 +38,12 @@
           <%= f.password_field :password, autocomplete: "new-password", class: "new-box", placeholder: "パスワードを入力してください" %>
         </div>
 
-        <div class="field">
+        <div class="form-field">
           <%= f.label :password_confirmation, "パスワード (確認用)" %><br />
           <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "new-box", placeholder: "パスワードをもう一度入力してください" %>
         </div>
 
-        <div class="actions">
+        <div class="btn-field">
           <%= f.submit "新規登録", class: "sign-in-btn" %>
         </div>
       <% end %>
