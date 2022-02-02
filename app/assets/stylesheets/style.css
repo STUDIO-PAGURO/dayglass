@@ -227,10 +227,6 @@ body {
   justify-content: space-between;
 }
 
-.contents {
-  
-}
-
 .recommendation {
   background-color: #333333;
   width: 333px;
@@ -266,6 +262,7 @@ body {
   background-color: #333333;
   padding: 13px;
   width: 1026px;
+  margin-bottom: 30px;
 }
 
 .detailed-content_post {
@@ -317,6 +314,14 @@ body {
   margin-top: 52px;
 }
 
+.post-image-field {
+  text-align:center
+}
+
+.post-image {
+  margin-top: 13px;
+}
+
 /* 投稿 */
 
 .post-form {
@@ -328,6 +333,7 @@ body {
 .text-field {
   margin-top: 20px;
   width: 100%;
+  padding: 13px;
 }
 
 .form-image {

@@ -23,7 +23,7 @@
                 <%= link_to '編集', edit_post_path(@post.id), method: :get %>
               </li>
               <li>
-                <%= link_to '削除', post_path(@post.id), method: :delete %>
+                <%= link_to '削除', post_path(@post.id), method: :delete, data: { confirm: "削除しますか？" } %>
               </li>
             <% end %>
           </ul>
@@ -31,6 +31,9 @@
       </div>
       <div class="detailed-content_post">
         <p><%= @post.text %></p>
+        <div class="post-image-field">
+          <%= image_tag @post.image.variant(resize: "1000x720"), class: "post-image" if @post.image.attached? %>
+        </div>
       </div>
       <div class="reaction">
         <% if user_signed_in? %>
