@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :show]
-  before_action :move_to_index, except: [:index, :show, :search]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @posts = Post.includes(:user).order("created_at DESC")
@@ -26,6 +26,10 @@ class PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find(params[:id])
+    unless @post.user_id == current_user.id
+      redirect_to action: :index
+    end
   end
 
   def update
@@ -54,11 +58,5 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
-  end
-
-  def move_to_index
-    unless user_signed_in?
-      redirect_to action: :index
-    end
   end
 end
