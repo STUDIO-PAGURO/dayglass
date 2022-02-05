@@ -33,6 +33,49 @@ body {
   margin-left: 30px;
 }
 
+/* エラー */
+
+.error-alert {
+  color: #FF7158;
+  font-weight: bold;
+  background-color: lightpink;
+  padding: 13px;
+  border: 1px solid #FF7158;
+  border-radius: 5px;
+  margin-bottom: 12px;
+}
+
+.new-box2 {
+  width: 428px;
+  height: 36px;
+  margin-bottom: 12px;
+  padding: 0 13px;
+}
+
+.new-box2::placeholder {
+  color: red;
+  background-color: lightpink;
+  font-size: 14px;
+}
+
+.box2 {
+  width: 428px;
+  height: 45px;
+  margin-bottom: 12px;
+  padding: 0 13px;
+  border-radius: 5px;
+}
+
+.box2::placeholder {
+  color: red;
+  background-color: lightpink;
+  font-size: 14px;
+}
+
+.field_with_errors {
+  display: contents;
+}
+
 /* ログイン画面 */
 
 .background {
@@ -59,6 +102,7 @@ body {
 .right-contents {
   width: 50%;
   margin: 100px auto 0;
+  position: relative;
 }
 
 .title-logo {
@@ -68,33 +112,33 @@ body {
 .container {
   background-color: #333333;
   width: 506px;
-  height: 440px;
-  border-radius: 29px;
   padding: 46px 39px;
-  margin: 66px auto 100px;
+  margin: 66px auto 0;
 }
 
 .new-container {
   background-color: #333333;
   width: 506px;
-  height: 465px;
-  border-radius: 29px;
-  padding: 25px 39px;
-  margin: 66px auto 75px;
+  padding: 35px 39px;
+  margin: 66px auto 0;
 }
 
 .box {
   width: 428px;
   height: 45px;
   margin-bottom: 12px;
-  padding: 0 5px;
+  padding: 0 13px;
+  border: none;
+  border-radius: 5px;
 }
 
 .new-box {
   width: 428px;
   height: 36px;
   margin-bottom: 12px;
-  padding: 0 5px;
+  padding: 0 13px;
+  border: none;
+  border-radius: 5px;
 }
 
 .log-in-btn {
@@ -108,6 +152,7 @@ body {
   border: none;
   margin: 30px 0 25px;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .sign-in-btn {
@@ -121,6 +166,7 @@ body {
   border: none;
   margin-top: 10px;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .registration a {
@@ -133,13 +179,16 @@ body {
   font-size: 18px;
   font-weight: bold;
   padding: 14px 115px;
+  border-radius: 5px;
 }
 
 .footer {
   font-size: 20px;
   color: #808080;
-  text-align: center;
-  display: block;
+  position: absolute;
+  top: 92%;
+  left: 50%;
+  transform: translate(-50%, -10%);
 }
 
 /* タイムライン */
@@ -186,7 +235,8 @@ body {
   height: 30px;
   background-color: #999999;
   border: none;
-  padding: 0 8px;
+  border-radius: 5px;
+  padding: 0 10px;
 }
 
 .right-header {
@@ -319,11 +369,8 @@ body {
 }
 
 .post-image-field {
-  text-align:center
-}
-
-.post-image {
-  margin-top: 13px;
+  text-align: center;
+  margin-top: 10px;
 }
 
 /* 投稿 */
@@ -335,15 +382,20 @@ body {
 }
 
 .text-field {
+  background-color: #4D4D4D;
+  color: #CCCCCC;
   margin-top: 20px;
   width: 100%;
   padding: 13px;
+  border: none;
+  border-radius: 5px;
 }
 
 .form-image {
   background-color: #CCCCCC;
   color: #333333;
   border: none;
+  border-radius: 5px;
   padding: 5px 10px;
   cursor: pointer;
 }
@@ -362,6 +414,7 @@ body {
   margin: 10px auto;
   cursor: pointer;
   font-weight: bold;
+  border-radius: 5px;
 }
 
 .title {
@@ -400,6 +453,7 @@ body {
   height: 37px;
   background-color: #4D4D4D;
   border: none;
+  border-radius: 5px;
   padding: 5px 10px;
   color: #CCCCCC;
   font-size: 18px;
@@ -412,6 +466,7 @@ body {
   background-color: #CCCCCC;
   color: #333333;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -422,7 +477,7 @@ body {
 
 .comment {
   background-color: #4D4D4D;
-  padding: 5px 10px;
+  padding: 10px 13px;
   border-radius: 13px;
   width: fit-content;
 }
@@ -458,13 +513,21 @@ body {
 .profile-box {
   width: 428px;
   height: 45px;
-  padding: 0 5px;
+  padding: 0 13px;
+  background-color: #4D4D4D;
+  color: #CCCCCC;
+  border: none;
+  border-radius: 5px;
 }
 
 .profile-box2 {
   width: 428px;
-  height: 90px;
-  padding: 0 5px;
+  height: 150px;
+  padding: 10px 13px;
+  background-color: #4D4D4D;
+  color: #CCCCCC;
+  border: none;
+  border-radius: 5px;
 }
 
 .actions {
