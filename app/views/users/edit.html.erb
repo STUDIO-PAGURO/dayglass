@@ -6,7 +6,7 @@
           ◎
         </div>
         <div class="upper-profile-area">
-          <span class="profile-account"><%= @user.account %></span>
+          <span class="profile-account"><%= current_user.account %></span>
           <p><%= link_to "プロフィール写真を変更", "/" %></p> 
         </div>
         <div class="password-change">
@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="user-form">
-        <%= form_with model: @user, local: true do |f|%>
+        <%= form_with model: current_user, local: true do |f|%>
 
           <div class="field">
             <%= f.label :name, "名前" %><br />
