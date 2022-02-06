@@ -26,7 +26,6 @@
               <div class="user-nav">
                 <ul class="user__info">
                   <li>
-                    <%= link_to current_user.name, user_path(current_user.id) %>
                     <%= link_to current_user.account, user_path(current_user.id) %>
                     <%= link_to edit_user_path(current_user), class: "setting" do %>
                       <i class="uil uil-setting"></i>
