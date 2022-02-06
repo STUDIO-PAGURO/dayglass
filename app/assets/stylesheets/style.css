@@ -58,23 +58,23 @@ body {
   font-size: 14px;
 }
 
-.box2 {
+.profile-box-error {
   width: 428px;
   height: 45px;
-  margin-bottom: 12px;
   padding: 0 13px;
+  background-color: #4D4D4D;
+  color: #CCCCCC;
+  border: none;
   border-radius: 5px;
 }
 
-.box2::placeholder {
+.profile-box-error::placeholder {
   color: red;
   background-color: lightpink;
-  font-size: 14px;
 }
 
 .field_with_errors {
   display: contents;
-  color: red;
 }
 
 /* ログイン画面 */
