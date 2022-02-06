@@ -12,17 +12,17 @@
 
   <body>
     <div class="wrapper">
-      <header class="header">
-        <div class="header-contents">
-          <div class="left-header">
-            <%= link_to image_tag("logo.png", class: "logo"), "/" %>
-            <%= form_with url: search_posts_path, local: true, method: :get, class: "search-form" do |f| %>
-              <%= f.text_field :keyword, placeholder: "検索", class: "search-input" %>
-              <% f.submit %>
-            <% end %>
-          </div>
-          <div class="right-header">
-            <% if user_signed_in? %>
+      <% if user_signed_in? %>
+        <header class="header">
+          <div class="header-contents">
+            <div class="left-header">
+              <%= link_to image_tag("logo.png", class: "logo"), "/" %>
+              <%= form_with url: search_posts_path, local: true, method: :get, class: "search-form" do |f| %>
+                <%= f.text_field :keyword, placeholder: "検索", class: "search-input" %>
+                <% f.submit %>
+              <% end %>
+            </div>
+            <div class="right-header">
               <div class="user-nav">
                 <ul class="user__info">
                   <li>
@@ -37,15 +37,10 @@
                 <i class="uil uil-edit"></i>
                 <% end %>
               </div>
-            <% else %>
-              <div class="grid-6">
-                <%= link_to "ログイン", new_user_session_path, class: "right-area-content" %>
-                <%= link_to "新規登録", new_user_registration_path, class: "right-area-content" %>
-              </div>
-            <% end %>
+            </div>
           </div>
-        </div>
-      </header>
+        </header>
+      <% end %>
       <%= yield %>
     </div>
   </body>
