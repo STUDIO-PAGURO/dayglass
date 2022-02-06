@@ -26,7 +26,7 @@
         </div>
 
         <div class="form-field">
-          <%= f.label :account, "アカウント名 (必須)" %><br />
+          <%= f.label :account, "アカウント名 (必須・一度登録すると変更できません)" %><br />
           <% if @user.errors.include?(:account) %>
             <%= f.text_field :account, autocomplete: "account", class: "new-box2", placeholder: @user.errors.full_messages_for(:account).first %>
           <% else %>
