@@ -1,9 +1,12 @@
 <%= form_with model: post, local: true do |f| %>
   <%= render "layouts/error_messages", model: f.object %>
   <%= f.text_area :text, placeholder: "投稿する…", rows: "10", class: "text-field" %>
-  <label class="form-image">
-    <span class="image-file">画像</span>
-    <%= f.file_field :image, class: "hidden" %>
-  </label>
+  <div class="image-area">
+    <label class="form-image">
+      <span class="image-file">画像</span>
+      <%= f.file_field :image, class: "hidden", id: "post_image" %>
+    </label>
+    <div id="image-list"></div>
+  </div>
   <%= f.submit "投稿", class: "send-btn" %>
 <% end %>
