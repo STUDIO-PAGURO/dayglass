@@ -380,6 +380,7 @@ body {
   width: 666px;
   background-color: #333333;
   padding: 10px 30px;
+  margin-bottom: 30px;
 }
 
 .text-field {
@@ -392,17 +393,27 @@ body {
   border-radius: 5px;
 }
 
-.form-image {
+.image-area {
+  display: flex;
+}
+
+.image-file {
   background-color: #CCCCCC;
   color: #333333;
   border: none;
   border-radius: 5px;
   padding: 5px 10px;
+  margin-right: 10px;
   cursor: pointer;
 }
 
 .hidden {
   display: none;
+}
+
+.preview-size {
+  width: 175px;
+  height: auto;
 }
 
 .send-btn {
