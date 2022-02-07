@@ -5,17 +5,17 @@
         <div class="user-upper-content">
           <div class="user-area2">
             <div class="user-icon2">
-              ◎
+              <%#= image_tag , class: "icon2" %>
             </div>
             <div class="user2">
               <span class="user-name2">
-                <%= link_to @user.name, user_path(@user.id) %>
+                <%= link_to @name, user_path(@id) %>
               </span>
-              <p class="user-account"><%= @user.account %></p>
+              <p class="user-account"><%= @account %></p>
               <p class="follow-count">88フォロー中 92フォロワー<p>
             </div>
           </div>
-          <% if user_signed_in? && current_user.id != @user.id %>
+          <% if user_signed_in? && current_user.id != @id %>
             <div class="follow-btn">
                 フォロー
             </div>
