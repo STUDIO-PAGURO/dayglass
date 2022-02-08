@@ -510,6 +510,8 @@ body {
   background-color: #333333;
   padding: 50px 200px;
   width: 1026px;
+  display: flex;
+  justify-content: center;
 }
 
 .profile-image-edit {
@@ -518,18 +520,32 @@ body {
   justify-content: center;
 }
 
+.edit-user-icon {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.edit-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
 .upper-profile-area {
-  margin-left: 40px;
+  margin-left: 20px;
 }
 
 .profile-account {
   font-size: 20px;
 }
 
+.icon-file {
+  cursor: pointer;
+}
+
 .user-form {
   margin-top: 50px;
-  display: flex;
-  justify-content: center;
 }
 
 .profile-box {
@@ -570,5 +586,5 @@ body {
 
 .password-change {
   font-size: 14px;
-  padding-left: 70px;
+  margin-left: 90px;
 }
