@@ -13,7 +13,7 @@
           <%= link_to post.user.name, user_path(post.user.id) %>
         </span>
         <div class="limit-time">
-          6時間
+          <%= time_ago_in_words(post.created_at) %>
         </div>
       </div>
     </div>
