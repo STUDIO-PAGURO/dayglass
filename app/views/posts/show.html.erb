@@ -39,26 +39,26 @@
           <%= image_tag @post.image.variant(resize: "1000x720"), class: "post-image" if @post.image.attached? %>
         </div>
       </div>
-      <div class="reaction">
-        <% if user_signed_in? %>
-          <div class="reaction-btn">
-            <div class="heart">
-              ♡
-            </div>
-            <div class="comment2">
-              ∂
-            </div>
-            <div class="daygrass">
-              X
-            </div>
-          </div>
-          <div class="comment-form-area">
-            <%= form_with(model: [@post, @comment], class: "form", local: true) do |form| %>
-              <%= form.text_area :text, placeholder: "コメントする", rows: "1", class: "comment-form" %>
-              <%= form.submit "投稿する", class: "btn" %>
-            <% end %>
-          </div>
-        <% end %>
+      <div class="reaction-btn">
+        <div class="heart reaction-icon">
+          <i class="uil uil-heart"></i>
+        </div>
+        <div class="comment2 reaction-icon">
+          <i class="uil uil-comment"></i>
+          <% unless @post.comments.count == 0 %>
+            <%= @post.comments.count %>
+          <% end %>
+        </div>
+        <div class="dayglass reaction-icon">
+          <i class="uil uil-hourglass"></i>
+        </div>
+        <div class="comment-form-area">
+          <%= form_with(model: [@post, @comment], class: "form", local: true) do |form| %>
+            <%= form.text_area :text, placeholder: "コメントする", rows: "1", class: "comment-form" %>
+            <%= form.submit "投稿する", class: "btn" %>
+          <% end %>
+        </div>
+        <%# end %>
       </div>
       <div class="comments">
         <% @comments.each do |comment| %>

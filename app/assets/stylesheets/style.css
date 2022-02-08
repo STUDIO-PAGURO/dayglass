@@ -384,6 +384,18 @@ body {
   margin-top: 10px;
 }
 
+.heart, .comment2, .dayglass {
+  margin-right: 26px;
+}
+
+.reaction-icon {
+  font-size: 20px;
+}
+
+.comments-count {
+  margin-left: 5px;
+}
+
 /* 投稿 */
 
 .post-form {
@@ -464,6 +476,8 @@ body {
 
 .reaction-btn {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .form {
