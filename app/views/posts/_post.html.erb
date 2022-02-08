@@ -37,4 +37,22 @@
       <%= link_to image_tag(post.image.variant(resize: "640x720")), post_path(post.id), class: "post-image" if post.image.attached? %>
     </div>
   </div>
+  <div class="reaction">
+    <div class="reaction-btn">
+      <div class="heart">
+        <i class="uil uil-heart"></i>
+      </div>
+      <div class="comment2">
+        <%= link_to post_path(post.id), class: "comments-count" do %>
+          <i class="uil uil-comment"></i>
+          <% unless post.comments.count == 0 %>
+            <%= post.comments.count %>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="dayglass">
+        <i class="uil uil-hourglass"></i>
+      </div>
+    </div>
+  </div>
 </div>
