@@ -1,30 +1,37 @@
 <div class="main-contents">
   <div class="time-line">
     <div class="profile-edit">
-      <div class="profile-image-edit">
-        <div class="user-icon">
-          ◎
+      <%= form_with model: current_user, local: true do |f|%>
+        <% if current_user.errors.any? %>
+        <% end %>
+        <div class="profile-image-edit">
+          <div class="edit-user-icon">
+            <% if @icon.present? %>
+              <%= image_tag @icon, class: "edit-icon" %>
+            <% else %>
+              <%= image_tag "default_user.png", class: "edit-icon" %>
+            <% end %>
+          </div>
+          <div class="upper-profile-area">
+            <span class="profile-account"><%= current_user.account %></span>
+            <label class="form-icon">
+              <div class="icon-file">プロフィール写真を変更</div> 
+              <%= f.file_field :icon, class: "hidden" %>
+            </label>
+          </div>
+          <div class="password-change">
+            <%= link_to "パスワードを変更する", root_path %>
+          </div>
         </div>
-        <div class="upper-profile-area">
-          <span class="profile-account"><%= current_user.account %></span>
-          <p><%= link_to "プロフィール写真を変更", "/" %></p> 
-        </div>
-        <div class="password-change">
-          <%= link_to "パスワードを変更する", root_path %>
-        </div>
-      </div>
-      <div class="user-form">
-        <%= form_with model: current_user, local: true do |f|%>
+        <div class="user-form">
           <%#= render "layouts/error_messages", model: f.object %>
-          <% if current_user.errors.any? %>
-          <% end %>
 
           <div class="field">
             <%= f.label :name, "名前" %><br />
             <% if current_user.errors.include?(:name) %>
               <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "profile-box-error margin-l30", placeholder: current_user.errors.full_messages_for(:name).first %>
             <% else %>
-             <%= f.text_field :name, autofocus: true, class: "profile-box margin-l30" %>
+            <%= f.text_field :name, autofocus: true, class: "profile-box margin-l30" %>
             <% end %>
           </div>
 
@@ -45,8 +52,8 @@
           <div class="actions">
             <%= f.submit "保存する", class: "btn save-btn" %>
           </div>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
