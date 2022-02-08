@@ -6,6 +6,7 @@ class User < ApplicationRecord
          
   has_many :posts
   has_many :comments
+  has_one_attached :icon
 
   validates :name, :account, presence: true
   validates :password, presence: true, on: :create

@@ -5,7 +5,11 @@
         <div class="user-upper-content">
           <div class="user-area2">
             <div class="user-icon2">
-              <%#= image_tag , class: "icon2" %>
+              <% if @icon.attached? %>
+                <%= image_tag @icon, class: "icon2" %>
+              <% else %>
+                <%= image_tag "default_user.png", class: "icon2" %>
+              <% end %>
             </div>
             <div class="user2">
               <span class="user-name2">
