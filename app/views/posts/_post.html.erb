@@ -2,7 +2,11 @@
   <div class="upper-content">
     <div class="user-area">
       <div class="user-icon">
-        <%#= image_tag avatar_url(@user), class: "icon" %>
+        <% if post.user.icon.attached? %>
+          <%= image_tag post.user.icon, class: "icon" %>
+        <% else %>
+          <%= image_tag "default_user.png", class: "icon" %>
+        <% end %>
       </div>
       <div class="user">
         <span class="user-name">
@@ -17,11 +21,11 @@
       <i class="uil uil-ellipsis-h"></i>
       <ul class="more_list">
         <li>
-          <%= link_to '詳細', post_path(post.id), method: :get %>
+          <%= link_to "詳細", post_path(post.id), method: :get %>
         </li>
         <% if user_signed_in? && current_user.id == post.user_id %>
           <li>
-            <%= link_to '削除', post_path(post.id), method: :delete, data: { confirm: "削除しますか？" } %>
+            <%= link_to "削除", post_path(post.id), method: :delete, data: { confirm: "削除しますか？" } %>
           </li>
         <% end %>
       </ul>

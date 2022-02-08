@@ -4,7 +4,11 @@
       <div class="upper-content">
         <div class="user-area">
           <div class="user-icon2">
-            ◎
+            <% if @post.user.icon.attached? %>
+              <%= image_tag @post.user.icon, class: "icon" %>
+            <% else %>
+              <%= image_tag "default_user.png", class: "icon" %>
+            <% end %>
           </div>
           <div class="user">
             <span class="user-name">
@@ -60,7 +64,11 @@
         <% @comments.each do |comment| %>
           <div class="comment-area">
             <div class="user-icon">
-              ◎
+              <% if comment.user.icon.attached? %>
+                <%= image_tag comment.user.icon, class: "icon" %>
+              <% else %>
+                <%= image_tag "default_user.png", class: "icon" %>
+              <% end %>
             </div>
             <div class="comment">
               <p><span><%= link_to comment.user.name, user_path(comment.user_id) %></span>  ・・・5時間</p>
