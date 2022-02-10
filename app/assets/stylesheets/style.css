@@ -33,6 +33,14 @@ body {
   margin-left: 30px;
 }
 
+.margin-r26 {
+  margin-right: 26px;
+}
+
+.margin-r5 {
+  margin-right: 5px;
+}
+
 /* エラー */
 
 .error-alert {
@@ -318,9 +326,13 @@ body {
   margin-bottom: 30px;
 }
 
+.content-post {
+  margin-bottom: 20px;
+}
+
 .detailed-content {
   background-color: #333333;
-  padding: 13px;
+  padding: 13px 13px 26px;
   width: 1026px;
   margin-bottom: 30px;
 }
@@ -384,16 +396,26 @@ body {
   margin-top: 10px;
 }
 
-.heart, .comment2, .dayglass {
-  margin-right: 26px;
-}
-
 .reaction-icon {
   font-size: 20px;
 }
 
-.comments-count {
-  margin-left: 5px;
+.like-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.like-icon-large {
+  width: 16px;
+  height: 16px;
+}
+
+.liked-user {
+  font-size: 13px;
+}
+
+.liked-user:hover li {
+  display: block;
 }
 
 /* 投稿 */
@@ -470,7 +492,6 @@ body {
 
 .reaction {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 

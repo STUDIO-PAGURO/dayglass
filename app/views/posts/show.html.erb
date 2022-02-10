@@ -41,7 +41,30 @@
       </div>
       <div class="reaction-btn">
         <div class="heart reaction-icon">
-          <i class="uil uil-heart"></i>
+          <% if @post.liked_by?(current_user) %>
+            <%= link_to post_likes_path(@post), method: :delete do %>
+              <%= image_tag "like.png", class: "like-icon-large margin-r5" %>
+              <% unless @post.likes.count == 0 %>
+                <%= @post.likes.count %>
+              <% end %>
+              <%# <i class="uil uil-heart"></i> %>
+            <% end %>
+          <% else %>
+            <%= link_to post_likes_path(@post), method: :post do %>
+              <%= image_tag "unlike.png", class: "like-icon-large margin-r5" %>
+              <% unless @post.likes.count == 0 %>
+                <%= @post.likes.count %>
+              <% end %>
+              <%# <i class="uil uil-heart"></i> %>
+            <% end %>
+          <% end %>
+          <% if @post.liked_users.present? %>
+            <div class="liked-user hidden">
+              <% @post.liked_users.each do |user| %>
+                <li><%= user.name %></li>
+              <% end %>
+            </div>
+          <% end %>
         </div>
         <div class="comment2 reaction-icon">
           <i class="uil uil-comment"></i>
@@ -58,7 +81,6 @@
             <%= form.submit "投稿する", class: "btn" %>
           <% end %>
         </div>
-        <%# end %>
       </div>
       <div class="comments">
         <% @comments.each do |comment| %>
