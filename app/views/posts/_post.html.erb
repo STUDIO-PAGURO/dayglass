@@ -38,21 +38,35 @@
     </div>
   </div>
   <div class="reaction">
-    <div class="reaction-btn">
-      <div class="heart">
-        <i class="uil uil-heart"></i>
-      </div>
-      <div class="comment2">
-        <%= link_to post_path(post.id), class: "comments-count" do %>
-          <i class="uil uil-comment"></i>
-          <% unless post.comments.count == 0 %>
-            <%= post.comments.count %>
+    <div class="heart margin-r26">
+      <% if post.liked_by?(current_user) %>
+        <%= link_to post_likes_path(post), method: :delete do %>
+          <%= image_tag "like.png", class: "like-icon margin-r5" %>
+          <% unless post.likes.count == 0 %>
+            <%= post.likes.count %>
           <% end %>
+          <%# <i class="uil uil-heart"></i> %>
         <% end %>
-      </div>
-      <div class="dayglass">
-        <i class="uil uil-hourglass"></i>
-      </div>
+      <% else %>
+        <%= link_to post_likes_path(post), method: :post do %>
+          <%= image_tag "unlike.png", class: "like-icon margin-r5" %>
+          <% unless post.likes.count == 0 %>
+            <%= post.likes.count %>
+          <% end %>
+          <%# <i class="uil uil-heart"></i> %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="comment2 margin-r26">
+      <%= link_to post_path(post.id) do %>
+        <i class="uil uil-comment margin-r5"></i>
+        <% unless post.comments.count == 0 %>
+          <%= post.comments.count %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="dayglass margin-r26">
+      <i class="uil uil-hourglass"></i>
     </div>
   </div>
 </div>
