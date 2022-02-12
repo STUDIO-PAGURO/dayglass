@@ -14,7 +14,7 @@ h4 {
   font-size: 24px;
 }
 
-span {
+.b {
   font-weight: bold;
 }
 
@@ -31,6 +31,18 @@ body {
 
 .margin-l30 {
   margin-left: 30px;
+}
+
+.margin-r26 {
+  margin-right: 26px;
+}
+
+.margin-r5 {
+  margin-right: 5px;
+}
+
+.margin-r10 {
+  margin-right: 10px;
 }
 
 /* エラー */
@@ -318,9 +330,13 @@ body {
   margin-bottom: 30px;
 }
 
+.content-post {
+  margin-bottom: 20px;
+}
+
 .detailed-content {
   background-color: #333333;
-  padding: 13px;
+  padding: 26px;
   width: 1026px;
   margin-bottom: 30px;
 }
@@ -384,16 +400,35 @@ body {
   margin-top: 10px;
 }
 
-.heart, .comment2, .dayglass {
-  margin-right: 26px;
-}
-
 .reaction-icon {
   font-size: 20px;
 }
 
-.comments-count {
-  margin-left: 5px;
+.heart {
+  display: flex;
+}
+
+.likes-count {
+  position: relative;
+}
+
+.likes-count ul li {
+  display: none;
+  position: absolute;
+  width: 90px;
+  text-align: left;
+  background-color: #4D4D4D;
+  padding: 13px;
+  font-size: 13px;
+  border-radius: 5px;
+}
+
+.likes-count:hover ul li {
+  display: block;
+}
+
+.likes-lists {
+  
 }
 
 /* 投稿 */
@@ -470,11 +505,10 @@ body {
 
 .reaction {
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
-.reaction-btn {
+.reaction-area {
   display: flex;
   justify-content: space-between;
   align-items: center;
