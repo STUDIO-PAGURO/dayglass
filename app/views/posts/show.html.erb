@@ -4,23 +4,26 @@
       <div class="upper-content">
         <div class="user-area">
           <div class="user-icon2">
-            <% if @post.user.icon.attached? %>
-              <%= image_tag @post.user.icon, class: "icon" %>
-            <% else %>
-              <%= image_tag "default_user.png", class: "icon" %>
-            <% end %>
+            <%= link_to user_path(@post.user.id) do %>
+              <% if @post.user.icon.attached? %>
+                <%= image_tag @post.user.icon, class: "icon" %>
+              <% else %>
+                <%= image_tag "default_user.png", class: "icon" %>
+              <% end %>
           </div>
           <div class="user">
-            <span class="user-name">
-              <%= link_to @post.user.name, user_path(@post.user.id) %>
-            </span>
+              <div class="user-name b">
+                <%= @post.user.name %>
+              </div>
+            <% end %>
             <div class="limit-time">
               <%= time_ago_in_words(@post.created_at) %>
             </div>
           </div>
         </div>
+
         <div class="more">
-          <i class="uil uil-ellipsis-h"></i>
+          <i class="fa-solid fa-ellipsis"></i>
           <ul class="more_list">
             <% if user_signed_in? && current_user.id == @post.user_id %>
               <li>
@@ -33,48 +36,51 @@
           </ul>
         </div>
       </div>
+
       <div class="detailed-content_post">
         <p><%= @post.text %></p>
         <div class="post-image-field">
-          <%= image_tag @post.image.variant(resize: "1000x720"), class: "post-image" if @post.image.attached? %>
+          <%= image_tag @post.image.variant(resize: "974x720"), class: "post-image" if @post.image.attached? %>
         </div>
       </div>
-      <div class="reaction-btn">
+
+      <div class="reaction-area">
         <div class="heart reaction-icon">
           <% if @post.liked_by?(current_user) %>
             <%= link_to post_likes_path(@post), method: :delete do %>
-              <%= image_tag "like.png", class: "like-icon-large margin-r5" %>
-              <% unless @post.likes.count == 0 %>
+              <i class="fa-solid fa-heart margin-r10"></i>
+            <% end %>
+            <% unless @post.likes.count == 0 %>
+              <div class="likes-count">
                 <%= @post.likes.count %>
-              <% end %>
-              <%# <i class="uil uil-heart"></i> %>
+                <ul class="likes-lists b">
+                  <% @post.liked_users.each do |user| %>
+                    <li><%= link_to user.name, user_path(user) %></li>
+                  <% end %>
+                </ul>
+              </div>
             <% end %>
           <% else %>
             <%= link_to post_likes_path(@post), method: :post do %>
-              <%= image_tag "unlike.png", class: "like-icon-large margin-r5" %>
-              <% unless @post.likes.count == 0 %>
-                <%= @post.likes.count %>
-              <% end %>
-              <%# <i class="uil uil-heart"></i> %>
+              <i class="fa-regular fa-heart"></i>
+            <% end %>
+            <% unless @post.likes.count == 0 %>
+              <%= link_to @post.likes.count, root_path %>
             <% end %>
           <% end %>
-          <% if @post.liked_users.present? %>
-            <div class="liked-user hidden">
-              <% @post.liked_users.each do |user| %>
-                <li><%= user.name %></li>
-              <% end %>
-            </div>
-          <% end %>
         </div>
+
         <div class="comment2 reaction-icon">
-          <i class="uil uil-comment"></i>
+          <i class="fa-regular fa-comment margin-r5"></i>
           <% unless @post.comments.count == 0 %>
             <%= @post.comments.count %>
           <% end %>
         </div>
+
         <div class="dayglass reaction-icon">
-          <i class="uil uil-hourglass"></i>
+          <i class="fa-regular fa-hourglass margin-r10"></i>
         </div>
+
         <div class="comment-form-area">
           <%= form_with(model: [@post, @comment], class: "form", local: true) do |form| %>
             <%= form.text_area :text, placeholder: "コメントする", rows: "1", class: "comment-form" %>
@@ -82,6 +88,7 @@
           <% end %>
         </div>
       </div>
+     
       <div class="comments">
         <% @comments.each do |comment| %>
           <div class="comment-area">
@@ -93,12 +100,13 @@
               <% end %>
             </div>
             <div class="comment">
-              <p><span><%= link_to comment.user.name, user_path(comment.user_id) %></span>  - - - <%= time_ago_in_words(comment.created_at) %></p>
+              <p><span class="b"><%= link_to comment.user.name, user_path(comment.user_id) %></span>  - - - <%= time_ago_in_words(comment.created_at) %></p>
               <%= comment.text %>
             </div>
           </div>
         <% end %>
       </div>
+      
     </div>
   </div>
 </div>
