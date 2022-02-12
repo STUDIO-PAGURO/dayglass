@@ -5,7 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <%# <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"> %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -28,13 +28,13 @@
                   <li>
                     <%= link_to current_user.account, user_path(current_user.id) %>
                     <%= link_to edit_user_path(current_user), class: "setting" do %>
-                      <i class="uil uil-setting"></i>
+                      <i class="fa-solid fa-gear"></i>
                     <% end %>
                     <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
                   </li>
                 </ul>
                 <%= link_to new_post_path, class: "new-post" do %>
-                <i class="uil uil-edit"></i>
+                <i class="fa-regular fa-pen-to-square"></i>
                 <% end %>
               </div>
             </div>
