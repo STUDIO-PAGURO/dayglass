@@ -13,7 +13,9 @@
             <% end %>
           </div>
           <div class="upper-profile-area">
-            <span class="profile-account"><%= current_user.account %></span>
+            <div class="profile-account b">
+              <%= current_user.account %>
+            </div>
             <label class="form-icon">
               <div class="icon-file">プロフィール写真を変更</div> 
               <%= f.file_field :icon, class: "hidden" %>
