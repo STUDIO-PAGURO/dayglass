@@ -408,27 +408,31 @@ body {
   display: flex;
 }
 
+.like {
+  display: flex;
+}
+
 .likes-count {
   position: relative;
 }
 
-.likes-count ul li {
-  display: none;
+.likes-count ul {
   position: absolute;
-  width: 90px;
+  width: 100px;
+  display: none;
   text-align: left;
   background-color: #4D4D4D;
-  padding: 13px;
+  padding: 10px;
   font-size: 13px;
   border-radius: 5px;
 }
 
-.likes-count:hover ul li {
+.likes-count:hover ul {
   display: block;
 }
 
-.likes-lists {
-  
+.likes-lists li {
+  width: auto;
 }
 
 /* 投稿 */
