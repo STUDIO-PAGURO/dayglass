@@ -44,7 +44,7 @@
 
   <div class="reaction">
     <div class="heart margin-r26">
-      <div id="post_<%= post.id %>">
+      <div class="like" id="post_<%= post.id %>">
         <%= render partial: "likes/like", locals: { post: post, like: @like } %>
       </div>
     </div>

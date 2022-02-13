@@ -404,10 +404,6 @@ body {
   font-size: 20px;
 }
 
-.heart {
-  display: flex;
-}
-
 .like {
   display: flex;
 }
