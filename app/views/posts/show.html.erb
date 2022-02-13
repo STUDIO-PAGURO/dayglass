@@ -46,19 +46,9 @@
 
       <div class="reaction-area">
         <div class="heart reaction-icon">
-          <div id="post_<%= @post.id %>">
+          <div class="like" id="post_<%= @post.id %>">
             <%= render partial: "likes/like", locals: { post: @post, like: @like } %>
           </div>
-          <%# unless @post.likes.count == 0 %>
-            <%#<div class="likes-count">
-              <%= @post.likes.count %>
-              <%#<ul class="likes-lists b">
-                <% @post.liked_users.each do |user| %>
-                  <%#<li><%= link_to user.name, user_path(user) %><%#</li>%>
-                <%# end %>
-              <%#</ul>
-            </div>
-          <% end %>
         </div>
 
         <div class="comment2 reaction-icon">
