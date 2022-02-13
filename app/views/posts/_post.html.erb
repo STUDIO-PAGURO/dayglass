@@ -44,21 +44,9 @@
 
   <div class="reaction">
     <div class="heart margin-r26">
-      <% if post.liked_by?(current_user) %>
-        <%= link_to post_likes_path(post), method: :delete do %>
-          <i class="fa-solid fa-heart margin-r5"></i>
-          <% unless post.likes.count == 0 %>
-            <%= post.likes.count %>
-          <% end %>
-        <% end %>
-      <% else %>
-        <%= link_to post_likes_path(post), method: :post do %>
-          <i class="fa-regular fa-heart margin-r5"></i>
-          <% unless post.likes.count == 0 %>
-            <%= post.likes.count %>
-          <% end %>
-        <% end %>
-      <% end %>
+      <div id="post_<%= post.id %>">
+        <%= render partial: "likes/like", locals: { post: post, like: @like } %>
+      </div>
     </div>
 
     <div class="comment2 margin-r26">
