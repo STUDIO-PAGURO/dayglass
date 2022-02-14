@@ -154,7 +154,7 @@ body {
   border-radius: 5px;
 }
 
-.log-in-btn {
+.login-btn {
   width: 428px;
   height: 45px;
   background-color: #61B6FF;
@@ -255,16 +255,19 @@ body {
 .right-header {
   width: 360px;
   padding: 0 13px;
-}
-
-.user-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.user-nav {
+  display: flex;
+  align-items: center;
+}
+
 .setting {
   font-size: 20px;
+  margin-left: 13px;
 }
 
 .new-post {
@@ -279,6 +282,10 @@ body {
   display: flex;
   justify-content: center;
   padding-top: 109px;
+}
+
+.content {
+  position: relative;
 }
 
 .time-line {
@@ -321,6 +328,31 @@ body {
 }
 
 .more {
+  height: 25px;
+}
+
+.more:hover ul.more_list {
+  display: block;
+}
+
+.more ul.more_list {
+  display: none;
+  position: absolute;
+  right: 0px;
+  width: 50px;
+  background-color: #4D4D4D;
+  border-radius: 5px;
+  text-align: center;
+  padding: 3px;
+}
+
+.more ul.more_list li a {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.more ul.more_list li a:hover {
+  background-color: #333333;
 }
 
 .content {
@@ -339,6 +371,7 @@ body {
   padding: 26px;
   width: 1026px;
   margin-bottom: 30px;
+  position: relative;
 }
 
 .detailed-content_post {
@@ -390,6 +423,19 @@ body {
   font-weight: bold;
   color: #333333;
   background-color: #CCCCCC;
+  display: grid;
+  place-items: center;
+  margin-top: 52px;
+}
+
+.logout a {
+  width: 144px;
+  height: 46px;
+  border-radius: 23px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333333;
+  background-color: #FF7158;
   display: grid;
   place-items: center;
   margin-top: 52px;
