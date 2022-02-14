@@ -23,6 +23,10 @@
             <div class="follow-btn">
                 フォロー
             </div>
+          <% else %>
+            <div class="logout">
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+            </div>
           <% end %>
         </div>
         <div class="user-profile">
