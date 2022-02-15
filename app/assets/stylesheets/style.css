@@ -285,10 +285,6 @@ body {
   padding-top: 109px;
 }
 
-.content {
-  position: relative;
-}
-
 .time-line {
   width: 1026px;
   display: flex;
@@ -310,6 +306,12 @@ body {
 
 .upper-content {
   height: 70px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.follow-upper-content {
+  height: 50px;
   display: flex;
   justify-content: space-between;
 }
@@ -361,6 +363,11 @@ body {
   background-color: #333333;
   padding: 13px;
   margin-bottom: 30px;
+  position: relative;
+}
+
+.follow-content {
+  margin-bottom: 26px;
 }
 
 .content-post {
@@ -416,6 +423,14 @@ body {
   justify-content: space-between;
 }
 
+.follow-counts {
+  display: flex;
+}
+
+.follower-count {
+  margin-left: 26px;
+}
+
 .follow-btn {
   width: 144px;
   height: 46px;
@@ -424,6 +439,20 @@ body {
   font-weight: bold;
   color: #333333;
   background-color: #CCCCCC;
+  display: grid;
+  place-items: center;
+  margin-top: 52px;
+}
+
+.following-btn {
+  width: 144px;
+  height: 46px;
+  border-radius: 23px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #CCCCCC;
+  background-color: #333333;
+  border: 1px solid #CCCCCC;
   display: grid;
   place-items: center;
   margin-top: 52px;
@@ -440,6 +469,10 @@ body {
   display: grid;
   place-items: center;
   margin-top: 52px;
+}
+
+.follow-user-profile {
+  font-size: 15px;
 }
 
 .post-image-field {
