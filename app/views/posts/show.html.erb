@@ -22,19 +22,19 @@
           </div>
         </div>
 
-        <div class="more">
-          <i class="fa-solid fa-ellipsis"></i>
-          <ul class="more_list">
-            <% if user_signed_in? && current_user.id == @post.user_id %>
+        <% if current_user.id == @post.user_id %>
+          <div class="leader">
+            <i class="fa-solid fa-ellipsis"></i>
+            <ul class="leader_list">
               <li>
                 <%= link_to '編集', edit_post_path(@post.id), method: :get %>
               </li>
               <li>
                 <%= link_to '削除', post_path(@post.id), method: :delete, data: { confirm: "削除しますか？" } %>
               </li>
-            <% end %>
-          </ul>
-        </div>
+            </ul>
+          </div>
+        <% end %>
       </div>
 
       <div class="detailed-content_post">

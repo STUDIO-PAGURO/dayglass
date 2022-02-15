@@ -1,0 +1,33 @@
+<div class="recommendation-area">
+  <div class="upper-recommendation">
+    <p class="recommend">おすすめ</p>
+    <div class="more">
+      <%= link_to "もっと見る", root_path %>
+    </div>
+  </div>
+  <div class="recommendation-users">
+    <% recommendation_users.each do |recommendation_user| %>
+      <div class="recommendation-upper-content">
+        <div class="user-area">
+          <div class="user-icon">
+            <%= link_to user_path(recommendation_user) do %>
+              <% if recommendation_user.icon.attached? %>
+                <%= image_tag recommendation_user.icon, class: "icon" %>
+              <% else %>
+                <%= image_tag "default_user.png", class: "icon" %>
+              <% end %>
+          </div>
+          <div class="user">
+              <div class="user-name b">
+                <%= recommendation_user.name %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="mini-footer">
+  ©2022 STUDIO PAGURO
+</div>
