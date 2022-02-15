@@ -4,6 +4,7 @@ class PostsController < ApplicationController
 
   def index
     posts = Post.includes(:user).order("created_at DESC")
+    @recommendation_users = User.all
     user = User.find(current_user.id)
     followings = user.following_user
     @timeline = posts.where(user_id: followings).or(posts.where(user_id: user)).order("created_at DESC")
