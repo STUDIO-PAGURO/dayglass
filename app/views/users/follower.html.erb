@@ -1,0 +1,47 @@
+<div class="main-contents">
+  <div class="time-line">
+    <div class="contents">
+      <div class="user-info">
+        <%= render partial: "info", locals: { user: @user, followings: @followings, followers: @followers } %>
+      </div>
+      <div class="content">
+        <h4 class="title">フォロワー</h4>
+        <% @followers.each do |follower| %>
+          <div class="follow-content">
+            <div class="follow-upper-content">
+              <div class="user-area">
+                <div class="user-icon">
+                  <%= link_to user_path(follower) do %>
+                    <% if follower.icon.attached? %>
+                      <%= image_tag follower.icon, class: "icon" %>
+                    <% else %>
+                      <%= image_tag "default_user.png", class: "icon" %>
+                    <% end %>
+                </div>
+                <div class="user">
+                    <div class="user-name b">
+                      <%= follower.name %>
+                    </div>
+                    <div class="follow-account">
+                      <%= follower.account %>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+            <div class="follow-user-profile">
+              <%= follower.profile %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="recommendation">
+      <div class="recommendation-users">
+      </div>
+      <div class="mini-footer">
+        ©2022 STUDIO PAGURO
+      </div>
+    </div>
+  </div>
+</div>

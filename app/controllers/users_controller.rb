@@ -1,12 +1,9 @@
 class UsersController < ApplicationController
   def show
-    user = User.find(params[:id])
-    @id = user.id
-    @name = user.name
-    @account = user.account
-    @posts = user.posts.order("created_at DESC")
-    @profile = user.profile
-    @icon = user.icon
+    @user = User.find(params[:id])
+    @posts = @user.posts.order("created_at DESC")
+    @followings = @user.following_user
+    @followers = @user.follower_user
   end
 
   def edit
@@ -20,6 +17,18 @@ class UsersController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def following
+    @user = User.find(params[:user_id])
+    @followings = @user.following_user
+    @followers = @user.follower_user
+  end
+
+  def follower
+    @user = User.find(params[:user_id])
+    @followers = @user.follower_user
+    @followings = @user.following_user
   end
 
   private
