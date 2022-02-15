@@ -2,36 +2,7 @@
   <div class="time-line">
     <div class="contents">
       <div class="user-info">
-        <div class="user-upper-content">
-          <div class="user-area2">
-            <div class="user-icon2">
-              <% if @icon.attached? %>
-                <%= image_tag @icon, class: "icon2" %>
-              <% else %>
-                <%= image_tag "default_user.png", class: "icon2" %>
-              <% end %>
-            </div>
-            <div class="user2">
-              <div class="user-name2 b">
-                <%= link_to @name, user_path(@id) %>
-              </div>
-              <p class="user-account"><%= @account %></p>
-              <p class="follow-count">88フォロー中 92フォロワー<p>
-            </div>
-          </div>
-          <% if user_signed_in? && current_user.id != @id %>
-            <div class="follow-btn">
-                フォロー
-            </div>
-          <% else %>
-            <div class="logout">
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-            </div>
-          <% end %>
-        </div>
-        <div class="user-profile">
-            <%= @profile %>
-        </div>
+        <%= render partial: "info", locals: { user: @user, followings: @followings, followers: @followers } %>
       </div>
       <% @posts.each do |post| %>
         <%= render partial: "posts/post", locals: { post: post } %>
