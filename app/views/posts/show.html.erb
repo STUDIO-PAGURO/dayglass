@@ -63,9 +63,9 @@
         </div>
 
         <div class="comment-form-area">
-          <%= form_with(model: [@post, @comment], class: "form", local: true) do |form| %>
-            <%= form.text_area :text, placeholder: "コメントする", rows: "1", class: "comment-form" %>
-            <%= form.submit "投稿する", class: "btn" %>
+          <%= form_with(model: [@post, @comment], class: "form", local: true) do |f| %>
+            <%= f.text_area :text, placeholder: "コメントする", rows: "1", class: "comment-form" %>
+            <%= f.submit "投稿する", class: "btn" %>
           <% end %>
         </div>
       </div>
