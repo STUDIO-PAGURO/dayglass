@@ -3,7 +3,10 @@ class PostsController < ApplicationController
   # before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @posts = Post.includes(:user).order("created_at DESC")
+    posts = Post.includes(:user).order("created_at DESC")
+    user = User.find(current_user.id)
+    followings = user.following_user
+    @timeline = posts.where(user_id: followings).or(posts.where(user_id: user)).order("created_at DESC")
   end
   
   def new
