@@ -1,43 +1,37 @@
 <div class="main-contents">
-  <div class="time-line">
+  <div class="time-line centering">
     <div class="contents">
-      <div class="user-info">
-        <%= render partial: "info", locals: { user: @user, followings: @followings, followers: @followers } %>
-      </div>
       <div class="content">
-        <h4 class="title">フォロー中</h4>
-        <% @followings.each do |following| %>
+        <h4 class="title">おすすめ</h4>
+        <% @users.each do |user| %>
           <div class="follow-content">
             <div class="follow-upper-content">
               <div class="user-area">
                 <div class="user-icon">
-                  <%= link_to user_path(following) do %>
-                    <% if following.icon.attached? %>
-                      <%= image_tag following.icon, class: "icon" %>
+                  <%= link_to user_path(user) do %>
+                    <% if user.icon.attached? %>
+                      <%= image_tag user.icon, class: "icon" %>
                     <% else %>
                       <%= image_tag "default_user.png", class: "icon" %>
                     <% end %>
                 </div>
                 <div class="user">
                     <div class="user-name b">
-                      <%= following.name %>
+                      <%= user.name %>
                     </div>
                     <div class="follow-account">
-                      <%= following.account %>
+                      <%= user.account %>
                     </div>
                   <% end %>
                 </div>
               </div>
             </div>
             <div class="follow-user-profile">
-              <%= following.profile %>
+              <%= user.profile %>
             </div>
           </div>
         <% end %>
       </div>
-    </div>
-    <div class="recommendation">
-      <%= render partial: "posts/recommendation", locals: { recommendation_users: @recommendation_users } %>
     </div>
   </div>
 </div>

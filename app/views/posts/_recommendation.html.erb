@@ -2,7 +2,7 @@
   <div class="upper-recommendation">
     <p class="recommend">おすすめ</p>
     <div class="more">
-      <%= link_to "もっと見る", root_path %>
+      <%= link_to "もっと見る", users_path %>
     </div>
   </div>
   <div class="recommendation-users">
@@ -18,7 +18,7 @@
               <% end %>
           </div>
           <div class="user">
-              <div class="user-name b">
+              <div class="recommendation-user-name b">
                 <%= recommendation_user.name %>
               </div>
             <% end %>
