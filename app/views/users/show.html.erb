@@ -4,8 +4,14 @@
       <div class="user-info">
         <%= render partial: "info", locals: { user: @user, followings: @followings, followers: @followers } %>
       </div>
-      <% @posts.each do |post| %>
-        <%= render partial: "posts/post", locals: { post: post } %>
+      <% if current_user == @user %>
+        <% @user_posts.each do |post| %>
+          <%= render partial: "posts/post", locals: { post: post } %>
+        <% end %>
+      <% else %>
+        <% @posts.each do |post| %>
+          <%= render partial: "posts/post", locals: { post: post } %>
+        <% end %>
       <% end %>
     </div>
     <div class="recommendation">
