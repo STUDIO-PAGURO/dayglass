@@ -506,14 +506,26 @@ body {
   height: 333px;
 }
 
-.upper-recommendation {
+.recommendation-area {
   padding: 13px;
+}
+
+.upper-recommendation {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 13px;
 }
 
 .recommend {
   color: #808080;
+}
+
+.recommendation-upper-content {
+  margin-bottom: 6px;
+}
+
+.recommendation-user-name {
+  margin-top: 10px;
 }
 
 .mini-footer {
@@ -521,6 +533,10 @@ body {
   margin-top: 13px;
   color: #333333;
   font-size: 13px;
+}
+
+.centering {
+  justify-content: center;
 }
 
 /* 投稿 */
@@ -535,7 +551,6 @@ body {
 .text-field {
   background-color: #4D4D4D;
   color: #CCCCCC;
-  margin-top: 20px;
   width: 100%;
   padding: 13px;
   border: none;
@@ -580,7 +595,7 @@ body {
 
 .title {
   text-align: center;
-  margin-top: 10px;
+  margin: 10px 0 20px;
 }
 
 .edit-page {
