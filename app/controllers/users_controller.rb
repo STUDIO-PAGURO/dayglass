@@ -5,7 +5,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts.order("created_at DESC")
+    @user_posts = @user.posts.order("created_at DESC")
+    @posts = @user.posts.where(created_at: 24.hours.ago..).order("created_at DESC")
     @followings = @user.following_user
     @followers = @user.follower_user
     @recommendation_users = User.where.not(id: current_user.id).order("RAND()").limit(5)
