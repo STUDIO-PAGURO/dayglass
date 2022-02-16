@@ -8,6 +8,8 @@
         <% @user_posts.each do |post| %>
           <%= render partial: "posts/post", locals: { post: post } %>
         <% end %>
+      <% elsif @posts.blank? %>
+        <h4 class="title">24時間以内の投稿はありません。</h4>
       <% else %>
         <% @posts.each do |post| %>
           <%= render partial: "posts/post", locals: { post: post } %>
