@@ -317,6 +317,10 @@ body {
   border-radius: 50%;
 }
 
+.time-ago-in-words-red {
+  color: #FF7158;
+}
+
 .leader {
   height: 25px;
 }

@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   def index
-    @users = User.where.not(id: current_user.id).order("RAND()")
+    user = current_user
+    followings = user.following_user
+    @users = User.where.not(id: current_user.id).where.not(id: followings).order("RAND()")
   end
 
   def show
@@ -9,11 +11,14 @@ class UsersController < ApplicationController
     @posts = @user.posts.where(created_at: 24.hours.ago..).order("created_at DESC")
     @followings = @user.following_user
     @followers = @user.follower_user
-    @recommendation_users = User.where.not(id: current_user.id).order("RAND()").limit(5)
+    @recommendation_users = User.where.not(id: current_user.id).where.not(id: @followings).order("RAND()").limit(5)
   end
 
   def edit
     user = User.find(params[:id])
+    unless user.id == current_user.id
+      redirect_to root_path
+    end
     @icon = user.icon
   end
 
@@ -29,14 +34,14 @@ class UsersController < ApplicationController
     @user = User.find(params[:user_id])
     @followings = @user.following_user
     @followers = @user.follower_user
-    @recommendation_users = User.where.not(id: current_user.id).order("RAND()").limit(5)
+    @recommendation_users = User.where.not(id: current_user.id).where.not(id: @followings).order("RAND()").limit(5)
   end
 
   def follower
     @user = User.find(params[:user_id])
     @followers = @user.follower_user
     @followings = @user.following_user
-    @recommendation_users = User.where.not(id: current_user.id).order("RAND()").limit(5)
+    @recommendation_users = User.where.not(id: current_user.id).where.not(id: @followings).order("RAND()").limit(5)
   end
 
   private

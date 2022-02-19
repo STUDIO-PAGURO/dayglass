@@ -25,6 +25,11 @@ Rails 6.0.4.4
 - has_many :likes
 - has_many :comments
 
+- has_many :follower, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
+- has_many :followed, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
+- has_many :following_user, through: :follower, source: :followed
+- has_many :follower_user, through: :followed, source: :follower
+
 ## posts テーブル
 
 | Column   | Type       | Options                        |
@@ -63,10 +68,14 @@ Rails 6.0.4.4
 - belongs_to :user
 - belongs_to :post
 
-## follows テーブル
+## relationships テーブル
 
-| Column    | Type       | Options                        |
-| --------- | ---------- | ------------------------------ |
-| following | references | null: false, foreign_key: true |
-| follower  | references | null: false, foreign_key: true |
+| Column      | Type       | Options                        |
+| ----------- | ---------- | ------------------------------ |
+| follower    | references | null: false, foreign_key: true |
+| followed    | references | null: false, foreign_key: true |
 
+### Association
+
+- belongs_to :follower, class_name: "User"
+- belongs_to :followed, class_name: "User"
