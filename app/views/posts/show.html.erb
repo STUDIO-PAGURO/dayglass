@@ -17,7 +17,15 @@
               </div>
             <% end %>
             <div class="limit-time">
-              <%= time_ago_in_words(@post.created_at) %>
+              <% if @post.created_at < (Time.now - 21.hours) %>
+                <div class="time-ago-in-words-red">
+                  <%= time_ago_in_words(@post.created_at) %>
+                </div>
+              <% else %>
+                <div class="time-ago-in-words">
+                  <%= time_ago_in_words(@post.created_at) %>
+                </div>
+              <% end %>
             </div>
           </div>
         </div>
