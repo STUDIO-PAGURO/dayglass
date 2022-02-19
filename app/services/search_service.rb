@@ -1,9 +1,10 @@
 class SearchService
   def self.search(search)
+    posts = Post.where(created_at: 24.hours.ago..)
     if search != ""
-      Post.where("text LIKE(?)", "%#{search}%")
+      posts.where("text LIKE(?)", "%#{search}%").order("created_at DESC")
     else
-      Post.all
+      posts.all.order("created_at DESC")
     end
   end
 end
