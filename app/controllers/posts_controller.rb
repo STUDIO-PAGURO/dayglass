@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:edit, :show]
+  before_action :set_post, only: [:edit, :show, :update]
   # before_action :authenticate_user!, except: [:index, :show]
 
   def index
     posts = Post.includes(:user)
-    @recommendation_users = User.where.not(id: current_user.id).order("RAND()").limit(5)
     user = User.find(current_user.id)
     followings = user.following_user
+    @recommendation_users = User.where.not(id: current_user.id).where.not(id: followings).order("RAND()").limit(5)
     @timeline = posts.where(user_id: followings, created_at: 24.hours.ago..).or(posts.where(user_id: user, created_at: 24.hours.ago..)).order("created_at DESC")
   end
   
@@ -31,14 +31,12 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
     unless @post.user_id == current_user.id
       redirect_to action: :index
     end
   end
 
   def update
-    @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to post_path(@post.id)
     else
@@ -47,12 +45,18 @@ class PostsController < ApplicationController
   end
 
   def show
+    if @post.user_id != current_user.id && @post.created_at < 24.hours.ago
+      redirect_to root_path
+    end
     @comment = Comment.new
     @comments = @post.comments.includes(:user)
     @like = Like.new
   end
 
   def search
+    user = current_user
+    followings = user.following_user
+    @recommendation_users = User.where.not(id: current_user.id).where.not(id: followings).order("RAND()").limit(5)
     @posts = SearchService.search(params[:keyword])
   end
 
