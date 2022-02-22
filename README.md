@@ -21,9 +21,10 @@ Rails 6.0.4.4
 
 ### Association
 
-- has_many :posts
+- has_many :posts, dependent: :destroy
 - has_many :likes
 - has_many :comments
+- has_one_attached :icon
 
 - has_many :follower, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
 - has_many :followed, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
@@ -41,7 +42,10 @@ Rails 6.0.4.4
 
 - belongs_to :user
 - has_many :likes
-- has_many :comments
+- has_many :comments, dependent: :destroy
+- has_one_attached :image
+- has_many :likes, dependent: :destroy
+- has_many :liked_users, through: :likes, source: :user
 
 ## likes テーブル
 
@@ -79,3 +83,15 @@ Rails 6.0.4.4
 
 - belongs_to :follower, class_name: "User"
 - belongs_to :followed, class_name: "User"
+
+## repost テーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
+| post   | references | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :post
