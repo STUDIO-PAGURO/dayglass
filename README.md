@@ -83,15 +83,3 @@ Rails 6.0.4.4
 
 - belongs_to :follower, class_name: "User"
 - belongs_to :followed, class_name: "User"
-
-## repost テーブル
-
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| post   | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :user
-- belongs_to :post
