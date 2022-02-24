@@ -15,7 +15,11 @@
           </div>
         <% end %>
         <div class="limit-time">
-          <% if post.created_at < (Time.now - 21.hours) %>
+          <% if post.created_at < (Time.now - 24.hours) %>
+            <div class="time-ago-in-words-black">
+              <%= time_ago_in_words(post.created_at) %>
+            </div>
+          <% elsif post.created_at < (Time.now - 21.hours) %>
             <div class="time-ago-in-words-red">
               <%= time_ago_in_words(post.created_at) %>
             </div>
