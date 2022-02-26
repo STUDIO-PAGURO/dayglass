@@ -41,5 +41,18 @@
       <% end %>
       <%= yield %>
     </div>
+    <footer>
+      <div class="left-footer">
+        <%= form_with url: search_posts_path, local: true, method: :get, class: "search-form" do |f| %>
+          <%= f.text_field :keyword, placeholder: "検索", class: "search-input" %>
+          <% f.submit %>
+        <% end %>
+      </div>
+      <div class="new-post-icon">
+        <%= link_to new_post_path, class: "new-post" do %>
+        <i class="fa-regular fa-pen-to-square"></i>
+        <% end %>
+      </div>
+    </footer>
   </body>
 </html>
