@@ -273,12 +273,12 @@ body {
 }
 
 .setting {
-  font-size: 20px;
+  font-size: 2rem;
   margin-left: 13px;
 }
 
 .new-post {
-  font-size: 45px;
+  font-size: 4.5rem;
 }
 
 .right-area-content {
@@ -373,6 +373,10 @@ body {
 
 .content-post {
   margin-bottom: 20px;
+}
+
+footer {
+  display: none;
 }
 
 /* ユーザーページ */
@@ -551,7 +555,7 @@ body {
   text-align: center;
   margin-top: 13px;
   color: #333333;
-  font-size: 13px;
+  font-size: 1.3rem;
 }
 
 .centering {
@@ -883,10 +887,32 @@ body {
     max-width: 100%;
   }
 
+  .sub-contents {
+    width: 23%;
+  }
+
   .recommendation {
     background-color: #333333;
-    width: 23%;
     height: 333px;
+    padding: 13px;
+    font-size: 1.3rem;
+  }
+
+  .upper-recommendation {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 13px;
+  }
+
+  .recommendation-user-name {
+    margin-top: 13px;
+  }
+
+  .mini-footer {
+    text-align: center;
+    margin-top: 13px;
+    color: #333333;
+    font-size: 1rem;
   }
 }
 
@@ -1023,5 +1049,81 @@ body {
     top: 110%;
     left: 50%;
     transform: translate(-50%, -10%);
+  }
+
+  .header {
+    background-color: #333333;
+    width: 100vw;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    z-index: 100;
+  }
+
+  .left-header .search-form {
+    display: none;
+  }
+
+  .logo {
+    width: 80%;
+    height: 80%;
+    margin-top: 8px;
+  }
+
+  .right-header .new-post-icon {
+    display: none;
+  }
+
+  footer {
+    background-color: #333333;
+    width: 100vw;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    position: absolute;
+    bottom: 0;
+    z-index: 100;
+  }
+
+  footer .search-input {
+    width: 290px;
+    height: 25px;
+    background-color: #999999;
+    border: none;
+    border-radius: 5px;
+    padding: 0 10px;
+  }
+
+  footer .new-post {
+    font-size: 30px;
+  }
+
+  .main-contents {
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+  }
+
+  .contents {
+    width: 100%;
+  }
+
+  .content {
+    width: 100%;
+    background-color: #333333;
+    padding: 13px;
+    margin-bottom: 15px;
+    position: relative;
+  }
+
+  .content-post {
+    margin-bottom: 8px;
+  }
+
+  .sub-contents {
+    display: none;
   }
 }
