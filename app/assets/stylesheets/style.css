@@ -1,5 +1,6 @@
 html {
   font-size: 62.5%;
+  height: 100%;
 }
 
 h1 {
@@ -31,6 +32,7 @@ body {
   font-family:"Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
   color: #CCCCCC;
   font-size: 1.6rem;
+  height: 100%;
 }
 
 .margin-l30 {
@@ -375,11 +377,21 @@ body {
   margin-bottom: 20px;
 }
 
+.text {
+  word-wrap: break-word;
+  white-space: wrap;
+}
+
+.nl-text {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
 footer {
   display: none;
 }
 
-/* ユーザーページ */
+/* 詳細ページ */
 
 .detailed-content {
   background-color: #333333;
@@ -392,7 +404,10 @@ footer {
 .detailed-content_post {
   font-size: 1.8rem;
   margin-bottom: 20px;
+  word-break: break-word;
 }
+
+/* ユーザーページ */
 
 .user-info {
   background-color: #333333;
@@ -417,7 +432,6 @@ footer {
 
 .user-name2 {
   font-size: 3.2rem;
-  
 }
 
 .user-account {
@@ -465,7 +479,7 @@ footer {
   margin-top: 52px;
 }
 
-.logout a {
+.logout {
   width: 144px;
   height: 46px;
   border-radius: 23px;
@@ -679,7 +693,7 @@ footer {
   background-color: #4D4D4D;
   padding: 10px 13px;
   border-radius: 13px;
-  width: fit-content;
+  word-break: break-word;
 }
 
 /* プロフィール編集 */
@@ -914,6 +928,35 @@ footer {
     color: #333333;
     font-size: 1rem;
   }
+  
+  .detailed-content {
+    background-color: #333333;
+    padding: 26px;
+    width: 100%;
+    margin-bottom: 30px;
+    position: relative;
+  }
+
+  .comment-form-area {
+    width: 80%;
+  }
+
+  .comment-form {
+    height: 37px;
+    background-color: #4D4D4D;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #CCCCCC;
+    font-size: 1.8rem;
+  }
+
+  .user-info {
+    background-color: #333333;
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 13px;
+  }
 }
 
 /* スマホ表示時 */
@@ -1119,11 +1162,94 @@ footer {
     position: relative;
   }
 
+  .content:last-child {
+    margin-bottom: 75px;
+  }
+
   .content-post {
     margin-bottom: 8px;
   }
 
   .sub-contents {
     display: none;
+  }
+
+  .detailed-content {
+    background-color: #333333;
+    padding: 13px;
+    width: 100%;
+    margin-bottom: 60px;
+    position: relative;
+  }
+
+  .comment-form-area {
+    width: 60%;
+  }
+
+  .icon2 {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+
+  .user-name2 {
+    font-size: 2.4rem;
+  }
+
+  .user-upper-content { 
+    display: block;
+    height: 170px;
+  }
+
+  .user-account {
+    font-size: 1.8rem;
+  }
+
+  .follow-counts {
+    display: flex;
+    font-size: 1.4rem;
+  }
+
+  .follow-btn {
+    width: 144px;
+    height: 46px;
+    border-radius: 23px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333333;
+    background-color: #CCCCCC;
+    display: grid;
+    place-items: center;
+    float: right;
+    margin-top: 13px;
+  }
+
+  .following-btn {
+    width: 144px;
+    height: 46px;
+    border-radius: 23px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #CCCCCC;
+    background-color: #333333;
+    border: 1px solid #CCCCCC;
+    display: grid;
+    place-items: center;
+    float: right;
+    margin-top: 13px;
+  }
+  
+  .logout {
+    width: 144px;
+    height: 46px;
+    border-radius: 23px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333333;
+    background-color: #FF7158;
+    display: grid;
+    place-items: center;
+    float: right;
+    margin-top: 13px;
   }
 }
