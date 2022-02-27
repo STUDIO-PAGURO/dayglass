@@ -46,7 +46,7 @@
       </div>
 
       <div class="detailed-content_post">
-        <p><%= @post.text %></p>
+        <p class="nl-text"><%= @post.text %></p>
         <div class="post-image-field">
           <%= image_tag @post.image.variant(resize: "974x720"), class: "post-image" if @post.image.attached? %>
         </div>
@@ -90,12 +90,12 @@
             </div>
             <div class="comment">
               <p><span class="b"><%= link_to comment.user.name, user_path(comment.user_id) %></span>  - - - <%= time_ago_in_words(comment.created_at) %></p>
-              <%= comment.text %>
+              <p class="nl-text"><%= comment.text %></p>
             </div>
           </div>
         <% end %>
       </div>
-      
+
     </div>
   </div>
 </div>

@@ -14,8 +14,8 @@
       <div class="user-account">
         <%= user.account %>
       </div>
-      <div class="follow-counts">
-        <div class="follow-count">
+      <div class="follow-counts b">
+        <div class="follow-count ">
           <% if followings.count == 0 %>
             <%= "#{followings.count} フォロー中" %>
           <% else %>
@@ -37,11 +37,11 @@
       <%= render partial: "relationships/follow", locals: { user: user } %>
     </div>
   <% else %>
-    <div class="logout">
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+    <div class="logout-btn">
+      <%= link_to "ログアウト", destroy_user_session_path, class: "logout", method: :delete %>
     </div>
   <% end %>
 </div>
-<div class="user-profile">
-    <%= @user.profile %>
+<div class="user-profile text">
+  <%= @user.profile %>
 </div>
