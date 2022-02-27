@@ -41,6 +41,7 @@
       <% end %>
       <%= yield %>
     </div>
+    <%# SP用 %>
     <footer>
       <div class="left-footer">
         <%= form_with url: search_posts_path, local: true, method: :get, class: "search-form" do |f| %>
@@ -54,5 +55,6 @@
         <% end %>
       </div>
     </footer>
+    <%# /SP用 %>
   </body>
 </html>
