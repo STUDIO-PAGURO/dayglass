@@ -1328,6 +1328,23 @@ footer {
     margin-left: 20px;
   }
 
+  .profile-box-error {
+    width: 68%;
+    height: 45px;
+    padding: 0 13px;
+    background-color: #4D4D4D;
+    color: #CCCCCC;
+    border: none;
+    border-radius: 5px;
+    margin-left: 20px;
+  }
+
+  .profile-box-error::placeholder {
+    color: red;
+    background-color: lightpink;
+    font-size: 1.4rem;
+  }
+
   .profile-box2 {
     width: 68%;
     height: 150px;
@@ -1342,5 +1359,12 @@ footer {
   .password-change {
     font-size: 1.4rem;
     margin-top: 10px;
+  }
+
+  .post-form {
+    width: 90%;
+    background-color: #333333;
+    padding: 10px 30px;
+    margin-bottom: 30px;
   }
 }
