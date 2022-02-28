@@ -11,7 +11,8 @@ class UsersController < ApplicationController
     @posts = @user.posts.where(created_at: 24.hours.ago..).order("created_at DESC")
     @followings = @user.following_user
     @followers = @user.follower_user
-    @recommendation_users = User.where.not(id: current_user.id).where.not(id: @followings).order("RAND()").limit(5)
+    own_followings =current_user.following_user
+    @recommendation_users = User.where.not(id: current_user.id).where.not(id: own_followings).order("RAND()").limit(5)
   end
 
   def edit
@@ -34,14 +35,16 @@ class UsersController < ApplicationController
     @user = User.find(params[:user_id])
     @followings = @user.following_user
     @followers = @user.follower_user
-    @recommendation_users = User.where.not(id: current_user.id).where.not(id: @followings).order("RAND()").limit(5)
+    own_followings =current_user.following_user
+    @recommendation_users = User.where.not(id: current_user.id).where.not(id: own_followings).order("RAND()").limit(5)
   end
 
   def follower
     @user = User.find(params[:user_id])
     @followers = @user.follower_user
     @followings = @user.following_user
-    @recommendation_users = User.where.not(id: current_user.id).where.not(id: @followings).order("RAND()").limit(5)
+    own_followings =current_user.following_user
+    @recommendation_users = User.where.not(id: current_user.id).where.not(id: own_followings).order("RAND()").limit(5)
   end
 
   private
