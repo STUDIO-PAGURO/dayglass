@@ -29,14 +29,14 @@
                 </div>
               </div>
             </div>
-            <div class="follow-user-profile">
+            <div class="follow-user-profile text">
               <%= follower.profile %>
             </div>
           </div>
         <% end %>
       </div>
     </div>
-    <div class="recommendation">
+    <div class="sub-contents">
       <%= render partial: "posts/recommendation", locals: { recommendation_users: @recommendation_users } %>
     </div>
   </div>

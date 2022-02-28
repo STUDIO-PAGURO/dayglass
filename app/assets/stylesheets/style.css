@@ -1,3 +1,8 @@
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
 h1 {
   font-size: 80px;
 }
@@ -26,7 +31,8 @@ a {
 body {
   font-family:"Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
   color: #CCCCCC;
-  font-size: 16px;
+  font-size: 1.6rem;
+  height: 100%;
 }
 
 .margin-l30 {
@@ -67,7 +73,7 @@ body {
 .new-box2::placeholder {
   color: red;
   background-color: lightpink;
-  font-size: 14px;
+  font-size: 1.4rem;
 }
 
 .profile-box-error {
@@ -78,6 +84,7 @@ body {
   color: #CCCCCC;
   border: none;
   border-radius: 5px;
+  margin-left: 30px;
 }
 
 .profile-box-error::placeholder {
@@ -96,6 +103,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   height: 100vh;
   display: flex;
 }
@@ -110,6 +118,7 @@ body {
   color: #FFFFFF;
   line-height: 125%;
   text-shadow: 0 0 5px rgb(0 0 0 / 90%);
+  width: 560px;
 }
 
 .right-contents {
@@ -160,7 +169,7 @@ body {
   background-color: #61B6FF;
   color: #333333;
   letter-spacing: 0.1em;
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: bold;
   border: none;
   margin: 30px 0 25px;
@@ -174,7 +183,7 @@ body {
   background-color: #FF7158;
   color: #333333;
   letter-spacing: 0.1em;
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: bold;
   border: none;
   margin-top: 10px;
@@ -189,14 +198,14 @@ body {
   color: #333333;
   letter-spacing: 0.1em;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: bold;
   padding: 14px 115px;
   border-radius: 5px;
 }
 
 .footer {
-  font-size: 20px;
+  font-size: 2rem;
   color: #808080;
   position: absolute;
   top: 92%;
@@ -267,12 +276,12 @@ body {
 }
 
 .setting {
-  font-size: 20px;
+  font-size: 2rem;
   margin-left: 13px;
 }
 
 .new-post {
-  font-size: 45px;
+  font-size: 4.5rem;
 }
 
 .right-area-content {
@@ -321,6 +330,10 @@ body {
   color: #FF7158;
 }
 
+.time-ago-in-words-black {
+  color: black;
+}
+
 .leader {
   height: 25px;
 }
@@ -365,6 +378,22 @@ body {
   margin-bottom: 20px;
 }
 
+.text {
+  word-wrap: break-word;
+  white-space: wrap;
+}
+
+.nl-text {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+footer {
+  display: none;
+}
+
+/* 詳細ページ */
+
 .detailed-content {
   background-color: #333333;
   padding: 26px;
@@ -374,9 +403,12 @@ body {
 }
 
 .detailed-content_post {
-  font-size: 18px;
+  font-size: 1.8rem;
   margin-bottom: 20px;
+  word-break: break-word;
 }
+
+/* ユーザーページ */
 
 .user-info {
   background-color: #333333;
@@ -400,12 +432,11 @@ body {
 }
 
 .user-name2 {
-  font-size: 2em;
-  
+  font-size: 3.2rem;
 }
 
 .user-account {
-  font-size: 20px;
+  font-size: 2rem;
 }
 
 .user-upper-content {
@@ -426,7 +457,7 @@ body {
   width: 144px;
   height: 46px;
   border-radius: 23px;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: bold;
   color: #333333;
   background-color: #CCCCCC;
@@ -439,7 +470,7 @@ body {
   width: 144px;
   height: 46px;
   border-radius: 23px;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: bold;
   color: #CCCCCC;
   background-color: #333333;
@@ -449,11 +480,11 @@ body {
   margin-top: 52px;
 }
 
-.logout a {
+.logout {
   width: 144px;
   height: 46px;
   border-radius: 23px;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: bold;
   color: #333333;
   background-color: #FF7158;
@@ -463,8 +494,10 @@ body {
 }
 
 .follow-user-profile {
-  font-size: 15px;
+  font-size: 1.5rem;
 }
+
+/* 画像・リアクション */
 
 .post-image-field {
   text-align: center;
@@ -472,7 +505,7 @@ body {
 }
 
 .reaction-icon {
-  font-size: 20px;
+  font-size: 2rem;
 }
 
 .like {
@@ -490,7 +523,7 @@ body {
   text-align: left;
   background-color: #4D4D4D;
   padding: 10px;
-  font-size: 13px;
+  font-size: 1.3rem;
   border-radius: 5px;
   z-index: 90;
 }
@@ -505,13 +538,13 @@ body {
 
 /* おすすめ */
 
-.recommendation {
-  background-color: #333333;
+.sub-contents {
   width: 333px;
-  height: 333px;
 }
 
-.recommendation-area {
+.recommendation {
+  background-color: #333333;
+  height: 333px;
   padding: 13px;
 }
 
@@ -537,7 +570,7 @@ body {
   text-align: center;
   margin-top: 13px;
   color: #333333;
-  font-size: 13px;
+  font-size: 1.3rem;
 }
 
 .centering {
@@ -661,15 +694,15 @@ body {
   background-color: #4D4D4D;
   padding: 10px 13px;
   border-radius: 13px;
-  width: fit-content;
+  word-break: break-word;
 }
 
 /* プロフィール編集 */
 
 .profile-edit {
   background-color: #333333;
-  padding: 50px 200px;
-  width: 1026px;
+  padding: 50px 100px;
+  width: 800px;
   display: flex;
   justify-content: center;
 }
@@ -677,7 +710,7 @@ body {
 .profile-image-edit {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .edit-user-icon {
@@ -690,14 +723,19 @@ body {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  margin-left: 30px;
 }
 
 .upper-profile-area {
+  width: 428px;
   margin-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .profile-account {
-  font-size: 20px;
+  font-size: 2rem;
 }
 
 .icon-file {
@@ -716,6 +754,7 @@ body {
   color: #CCCCCC;
   border: none;
   border-radius: 5px;
+  margin-left: 30px;
 }
 
 .profile-box2 {
@@ -726,6 +765,7 @@ body {
   color: #CCCCCC;
   border: none;
   border-radius: 5px;
+  margin-left: 30px;
 }
 
 .actions {
@@ -745,18 +785,586 @@ body {
 }
 
 .password-change {
-  font-size: 14px;
-  margin-left: 90px;
+  font-size: 1.4rem;
 }
 
 /* タブレット表示時 */
 @media (max-width: 1024px) {
 
+  .background {
+    background-image: url(background_image_tb.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: block;
+  }
+
+  .left-contents {
+    padding: 33px 29px 0;
+    width: 100%;
+  }
+
+  .title-logo img{
+    text-align: center;
+    width: 80%;
+    height: 80%;
+  }
+
+  .catchphrase {
+    font-weight: bold;
+    color: #FFFFFF;
+    text-shadow: 0 0 5px rgb(0 0 0 / 90%);
+    font-size: 4rem;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .right-contents {
+    margin: 40px auto 0;
+    width: 100%;
+  }
+
+  .container {
+    background-color: #333333;
+    width: 506px;
+    padding: 46px 39px;
+    margin: 66px auto 0;
+  }
+
+  .footer {
+    font-size: 2rem;
+    color: #808080;
+    position: absolute;
+    top: 135%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+  }
   
+  .header-contents {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+  }
+
+  .left-header {
+    width: 75%;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .search-input {
+    width: 100%;
+    height: 30px;
+    background-color: #999999;
+    border: none;
+    border-radius: 5px;
+    padding: 0 10px;
+  }
+
+  .right-header {
+    width: 50%;
+    padding: 0 10px;
+    margin-left: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .time-line {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .contents {
+    width: 75%;
+  }
+
+  .content {
+    width: 100%;
+    background-color: #333333;
+    padding: 13px;
+    margin-bottom: 30px;
+    position: relative;
+  }
+
+  .upper-content {
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .post-image-field {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .post-image-field img {
+    max-width: 100%;
+  }
+
+  .sub-contents {
+    width: 23%;
+  }
+
+  .recommendation {
+    background-color: #333333;
+    height: 333px;
+    padding: 13px;
+    font-size: 1.3rem;
+  }
+
+  .upper-recommendation {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 13px;
+  }
+
+  .recommendation-user-name {
+    margin-top: 13px;
+  }
+
+  .mini-footer {
+    text-align: center;
+    margin-top: 13px;
+    color: #333333;
+    font-size: 1rem;
+  }
+  
+  .detailed-content {
+    background-color: #333333;
+    padding: 26px;
+    width: 100%;
+    margin-bottom: 30px;
+    position: relative;
+  }
+
+  .comment-form-area {
+    width: 80%;
+  }
+
+  .comment-form {
+    height: 37px;
+    background-color: #4D4D4D;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #CCCCCC;
+    font-size: 1.8rem;
+  }
+
+  .user-info {
+    background-color: #333333;
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 13px;
+  }
+
+  .profile-edit {
+    background-color: #333333;
+    width: 100%;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile-box {
+    width: 80%;
+    height: 45px;
+    padding: 0 13px;
+    background-color: #4D4D4D;
+    color: #CCCCCC;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .profile-box2 {
+    width: 80%;
+    height: 150px;
+    padding: 10px 13px;
+    background-color: #4D4D4D;
+    color: #CCCCCC;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .password-change {
+    font-size: 1.4rem;
+  }
 }
 
 /* スマホ表示時 */
 @media (max-width: 599px) {
 
+  .error-alert {
+    color: #FF7158;
+    font-weight: bold;
+    background-color: lightpink;
+    padding: 13px;
+    border: 1px solid #FF7158;
+    border-radius: 5px;
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+  }
 
+  .background {
+    background-image: url(background_image_sp.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    display: block;
+  }
+
+  .title-logo img{
+    text-align: center;
+    width: 75%;
+    height: 75%;
+  }
+
+  .catchphrase {
+    font-weight: bold;
+    color: #FFFFFF;
+    text-shadow: 0 0 5px rgb(0 0 0 / 90%);
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .right-contents {
+    margin: 20px auto 0;
+    width: 100%;
+  }
+
+  .container {
+    background-color: #333333;
+    width: 300px;
+    padding: 40px 35px;
+    margin: 66px auto 0;
+  }
+
+  .new-container {
+    background-color: #333333;
+    width: 300px;
+    padding: 35px 35px;
+    margin: 66px auto 0;
+    font-size: 1.2rem;
+  }
+
+  .box {
+    width: 230px;
+    height: 35px;
+    margin-bottom: 12px;
+    padding: 0 10px;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .new-box {
+    width: 230px;
+    height: 30px;
+    margin-bottom: 12px;
+    padding: 0 10px;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .new-box2 {
+    width: 230px;
+    height: 30px;
+    margin-bottom: 12px;
+    padding: 0 10px;
+  }
+
+  .new-box2::placeholder {
+    color: red;
+    background-color: lightpink;
+    font-size: 1.2rem;
+  }
+
+  .login-btn {
+    width: 230px;
+    height: 45px;
+    background-color: #61B6FF;
+    color: #333333;
+    letter-spacing: 0.1em;
+    font-size: 1.8rem;
+    font-weight: bold;
+    border: none;
+    margin: 30px 0 25px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .sign-in-btn {
+    width: 230px;
+    height: 36px;
+    background-color: #FF7158;
+    color: #333333;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .registration a {
+    width: 230px;
+    height: 45px;
+    background-color: #FF7158;
+    border-radius: 5px;
+    padding: 15px 16px;
+    font-weight: bold;
+  }
+
+  .footer {
+    font-size: 0.8rem;
+    color: #808080;
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    transform: translate(-50%, -10%);
+  }
+
+  .header {
+    background-color: #333333;
+    width: 100vw;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    z-index: 100;
+  }
+
+  .left-header .search-form {
+    display: none;
+  }
+
+  .logo {
+    width: 80%;
+    height: 80%;
+    margin-top: 8px;
+  }
+
+  .right-header .new-post-icon {
+    display: none;
+  }
+
+  footer {
+    background-color: #333333;
+    width: 100vw;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px;
+    position: absolute;
+    bottom: 0;
+    z-index: 100;
+  }
+
+  footer .search-input {
+    width: 290px;
+    height: 25px;
+    background-color: #999999;
+    border: none;
+    border-radius: 5px;
+    padding: 0 10px;
+  }
+
+  footer .new-post {
+    font-size: 30px;
+  }
+
+  .main-contents {
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+  }
+
+  .contents {
+    width: 100%;
+  }
+
+  .content {
+    width: 100%;
+    background-color: #333333;
+    padding: 13px;
+    margin-bottom: 15px;
+    position: relative;
+  }
+
+  .content:last-child {
+    margin-bottom: 75px;
+  }
+
+  .content-post {
+    margin-bottom: 8px;
+  }
+
+  .sub-contents {
+    display: none;
+  }
+
+  .detailed-content {
+    background-color: #333333;
+    padding: 13px;
+    width: 100%;
+    margin-bottom: 60px;
+    position: relative;
+  }
+
+  .comment-form-area {
+    width: 60%;
+  }
+
+  .icon2 {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+
+  .user-name2 {
+    font-size: 2.4rem;
+  }
+
+  .user-upper-content { 
+    display: block;
+    height: 170px;
+  }
+
+  .user-account {
+    font-size: 1.8rem;
+  }
+
+  .follow-counts {
+    display: flex;
+    font-size: 1.4rem;
+  }
+
+  .follow-btn {
+    width: 144px;
+    height: 46px;
+    border-radius: 23px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333333;
+    background-color: #CCCCCC;
+    display: grid;
+    place-items: center;
+    float: right;
+    margin-top: 13px;
+  }
+
+  .following-btn {
+    width: 144px;
+    height: 46px;
+    border-radius: 23px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #CCCCCC;
+    background-color: #333333;
+    border: 1px solid #CCCCCC;
+    display: grid;
+    place-items: center;
+    float: right;
+    margin-top: 13px;
+  }
+  
+  .logout {
+    width: 144px;
+    height: 46px;
+    border-radius: 23px;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333333;
+    background-color: #FF7158;
+    display: grid;
+    place-items: center;
+    float: right;
+    margin-top: 13px;
+  }
+
+  .profile-edit {
+    background-color: #333333;
+    width: 100%;
+    padding: 25px 25px;
+  }
+
+  .profile-image-edit {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .edit-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    margin: 0;
+  }
+
+  .upper-profile-area {
+    width: 80%;
+    margin-left: 20px;
+    display: block;
+  }
+
+  .profile-box {
+    width: 68%;
+    height: 45px;
+    padding: 0 13px;
+    background-color: #4D4D4D;
+    color: #CCCCCC;
+    border: none;
+    border-radius: 5px;
+    margin-left: 20px;
+  }
+
+  .profile-box-error {
+    width: 68%;
+    height: 45px;
+    padding: 0 13px;
+    background-color: #4D4D4D;
+    color: #CCCCCC;
+    border: none;
+    border-radius: 5px;
+    margin-left: 20px;
+  }
+
+  .profile-box-error::placeholder {
+    color: red;
+    background-color: lightpink;
+    font-size: 1.4rem;
+  }
+
+  .profile-box2 {
+    width: 68%;
+    height: 150px;
+    padding: 10px 13px;
+    background-color: #4D4D4D;
+    color: #CCCCCC;
+    border: none;
+    border-radius: 5px;
+    margin-left: 20px;
+  }
+
+  .password-change {
+    font-size: 1.4rem;
+    margin-top: 10px;
+  }
+
+  .post-form {
+    width: 90%;
+    background-color: #333333;
+    padding: 10px 30px;
+    margin-bottom: 30px;
+  }
 }
