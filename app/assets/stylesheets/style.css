@@ -84,6 +84,7 @@ body {
   color: #CCCCCC;
   border: none;
   border-radius: 5px;
+  margin-left: 30px;
 }
 
 .profile-box-error::placeholder {
@@ -700,8 +701,8 @@ footer {
 
 .profile-edit {
   background-color: #333333;
-  padding: 50px 200px;
-  width: 1026px;
+  padding: 50px 100px;
+  width: 800px;
   display: flex;
   justify-content: center;
 }
@@ -709,7 +710,7 @@ footer {
 .profile-image-edit {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .edit-user-icon {
@@ -722,10 +723,15 @@ footer {
   width: 44px;
   height: 44px;
   border-radius: 50%;
+  margin-left: 30px;
 }
 
 .upper-profile-area {
+  width: 428px;
   margin-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .profile-account {
@@ -748,6 +754,7 @@ footer {
   color: #CCCCCC;
   border: none;
   border-radius: 5px;
+  margin-left: 30px;
 }
 
 .profile-box2 {
@@ -758,6 +765,7 @@ footer {
   color: #CCCCCC;
   border: none;
   border-radius: 5px;
+  margin-left: 30px;
 }
 
 .actions {
@@ -778,7 +786,6 @@ footer {
 
 .password-change {
   font-size: 1.4rem;
-  margin-left: 90px;
 }
 
 /* タブレット表示時 */
@@ -956,6 +963,38 @@ footer {
     width: 100%;
     margin-bottom: 30px;
     padding: 13px;
+  }
+
+  .profile-edit {
+    background-color: #333333;
+    width: 100%;
+    padding: 50px 100px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile-box {
+    width: 80%;
+    height: 45px;
+    padding: 0 13px;
+    background-color: #4D4D4D;
+    color: #CCCCCC;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .profile-box2 {
+    width: 80%;
+    height: 150px;
+    padding: 10px 13px;
+    background-color: #4D4D4D;
+    color: #CCCCCC;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .password-change {
+    font-size: 1.4rem;
   }
 }
 
@@ -1251,5 +1290,57 @@ footer {
     place-items: center;
     float: right;
     margin-top: 13px;
+  }
+
+  .profile-edit {
+    background-color: #333333;
+    width: 100%;
+    padding: 25px 25px;
+  }
+
+  .profile-image-edit {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .edit-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    margin: 0;
+  }
+
+  .upper-profile-area {
+    width: 80%;
+    margin-left: 20px;
+    display: block;
+  }
+
+  .profile-box {
+    width: 68%;
+    height: 45px;
+    padding: 0 13px;
+    background-color: #4D4D4D;
+    color: #CCCCCC;
+    border: none;
+    border-radius: 5px;
+    margin-left: 20px;
+  }
+
+  .profile-box2 {
+    width: 68%;
+    height: 150px;
+    padding: 10px 13px;
+    background-color: #4D4D4D;
+    color: #CCCCCC;
+    border: none;
+    border-radius: 5px;
+    margin-left: 20px;
+  }
+
+  .password-change {
+    font-size: 1.4rem;
+    margin-top: 10px;
   }
 }
