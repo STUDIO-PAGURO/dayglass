@@ -128,7 +128,6 @@ body {
 .right-contents {
   width: 50%;
   margin: 100px auto 0;
-  
 }
 
 .title-logo {
@@ -217,7 +216,7 @@ body {
 }
 
 .footer {
-  width: 100%;
+  width: 50%;
   font-size: 2rem;
   color: #808080;
   position: absolute;
@@ -796,10 +795,6 @@ footer {
   margin-bottom: 26px;
 }
 
-.password-change {
-  font-size: 1.4rem;
-}
-
 /* タブレット表示時 */
 @media (max-width: 1024px) {
 
@@ -1007,10 +1002,6 @@ footer {
     border: none;
     border-radius: 5px;
   }
-
-  .password-change {
-    font-size: 1.4rem;
-  }
 }
 
 /* スマホ表示時 */
@@ -1185,7 +1176,7 @@ footer {
   }
 
   footer .search-input {
-    width: 290px;
+    width: 250px;
     height: 25px;
     background-color: #999999;
     border: none;
@@ -1193,8 +1184,12 @@ footer {
     padding: 0 10px;
   }
 
+  .sp-sub-contents {
+    font-size: 2rem;
+  }
+
   footer .new-post {
-    font-size: 30px;
+    font-size: 2.6rem;
   }
 
   .main-contents {
@@ -1368,11 +1363,6 @@ footer {
     border: none;
     border-radius: 5px;
     margin-left: 20px;
-  }
-
-  .password-change {
-    font-size: 1.4rem;
-    margin-top: 10px;
   }
 
   .post-form {
