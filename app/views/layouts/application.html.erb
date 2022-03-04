@@ -42,19 +42,26 @@
       <%= yield %>
     </div>
     <%# SP用 %>
-    <footer>
-      <div class="left-footer">
-        <%= form_with url: search_posts_path, local: true, method: :get, class: "search-form" do |f| %>
-          <%= f.text_field :keyword, placeholder: "検索", class: "search-input" %>
-          <% f.submit %>
-        <% end %>
-      </div>
-      <div class="new-post-icon">
-        <%= link_to new_post_path, class: "new-post" do %>
-        <i class="fa-regular fa-pen-to-square"></i>
-        <% end %>
-      </div>
-    </footer>
+    <% if user_signed_in? %>
+      <footer>
+        <div class="left-footer">
+          <%= form_with url: search_posts_path, local: true, method: :get, class: "search-form" do |f| %>
+            <%= f.text_field :keyword, placeholder: "検索", class: "search-input" %>
+            <% f.submit %>
+          <% end %>
+        </div>
+        <div class="sp-sub-contents">
+          <%= link_to users_path do %>
+            <i class="fa-solid fa-user-group"></i>
+          <% end %>
+        </div>
+        <div class="new-post-icon">
+          <%= link_to new_post_path, class: "new-post" do %>
+          <i class="fa-regular fa-pen-to-square"></i>
+          <% end %>
+        </div>
+      </footer>
+    <% end %>
     <%# /SP用 %>
   </body>
 </html>

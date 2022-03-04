@@ -1,76 +1,78 @@
 <div class="background">
-  <div class="left-contents">
-    <h1 class="catchphrase">
-      それはほぼ、
-      今日の出来事。
-    </h1>
-  </div>
-  <div class="right-contents">
-    <div class="title-logo">
-      <%= link_to root_path do %>
-        <%= image_tag "logo.png" %>
-      <% end %>
+  <div class="LR">
+    <div class="left-contents">
+      <h1 class="catchphrase">
+        それはほぼ、
+        今日の出来事。
+      </h1>
     </div>
-    <div class="new-container">
-      <%= form_with model: @user, url: user_registration_path, id: "new_user", class: "new_user", local: true do |f| %>
-        <% if @user.errors.any? %>
+    <div class="right-contents">
+      <div class="title-logo">
+        <%= link_to root_path do %>
+          <%= image_tag "logo.png" %>
         <% end %>
+      </div>
+      <div class="new-container">
+        <%= form_with model: @user, url: user_registration_path, id: "new_user", class: "new_user", local: true do |f| %>
+          <% if @user.errors.any? %>
+          <% end %>
 
-        <div class="form-field">
-          <%= f.label :name, "名前 (必須)" %><br />
-          <% if @user.errors.include?(:name) %>
-            <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "new-box2", placeholder: @user.errors.full_messages_for(:name).first %>
-          <% else %>
-            <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "new-box" %>
-          <% end %>
-        </div>
+          <div class="form-field">
+            <%= f.label :name, "名前 (必須)" %><br />
+            <% if @user.errors.include?(:name) %>
+              <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "new-box2", placeholder: @user.errors.full_messages_for(:name).first %>
+            <% else %>
+              <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "new-box" %>
+            <% end %>
+          </div>
 
-        <div class="form-field">
-          <%= f.label :account, "アカウント名 (必須・一度登録すると変更できません)" %><br />
-          <% if @user.errors.include?(:account) %>
-            <%= f.text_field :account, autocomplete: "account", class: "new-box2", placeholder: @user.errors.full_messages_for(:account).first %>
-          <% else %>
-            <%= f.text_field :account, autocomplete: "account", class: "new-box" %>
-          <% end %>
-        </div>
-        
-        <div class="form-field">
-          <%= f.label :email, "Ｅメール (必須)" %><br />
-          <% if @user.errors.include?(:email) %>
-            <%= f.email_field :email, autocomplete: "email", class: "new-box2", placeholder: @user.errors.full_messages_for(:email).first %>
-          <% else %>
-            <%= f.email_field :email, autocomplete: "email", class: "new-box" %>
-          <% end %>
-        </div>
+          <div class="form-field">
+            <%= f.label :account, "アカウント名 (必須・一度登録すると変更できません)" %><br />
+            <% if @user.errors.include?(:account) %>
+              <%= f.text_field :account, autocomplete: "account", class: "new-box2", placeholder: @user.errors.full_messages_for(:account).first %>
+            <% else %>
+              <%= f.text_field :account, autocomplete: "account", class: "new-box" %>
+            <% end %>
+          </div>
+          
+          <div class="form-field">
+            <%= f.label :email, "Ｅメール (必須)" %><br />
+            <% if @user.errors.include?(:email) %>
+              <%= f.email_field :email, autocomplete: "email", class: "new-box2", placeholder: @user.errors.full_messages_for(:email).first %>
+            <% else %>
+              <%= f.email_field :email, autocomplete: "email", class: "new-box" %>
+            <% end %>
+          </div>
 
-        <div class="form-field">
-          <%= f.label :password, "パスワード" %>
-          <% if @minimum_password_length %>
-             <em>(<%= @minimum_password_length %>文字以上)</em><br />
-          <% end %>
-          <% if @user.errors.include?(:password) %>
-            <%= f.password_field :password, autocomplete: "new-password", class: "new-box2", placeholder: @user.errors.full_messages_for(:password).first %>
-          <% else %>
-            <%= f.password_field :password, autocomplete: "new-password", class: "new-box", placeholder: "英字と数字の両方を含めてください" %>
-          <% end %>
-        </div>
+          <div class="form-field">
+            <%= f.label :password, "パスワード" %>
+            <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %>文字以上)</em><br />
+            <% end %>
+            <% if @user.errors.include?(:password) %>
+              <%= f.password_field :password, autocomplete: "new-password", class: "new-box2", placeholder: @user.errors.full_messages_for(:password).first %>
+            <% else %>
+              <%= f.password_field :password, autocomplete: "new-password", class: "new-box", placeholder: "英字と数字の両方を含めてください" %>
+            <% end %>
+          </div>
 
-        <div class="form-field">
-          <%= f.label :password_confirmation, "パスワード (確認用)" %><br />
-          <% if @user.errors.include?(:password_confirmation) %>
-            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "new-box2", placeholder: @user.errors.full_messages_for(:password_confirmation).first %>
-          <% else %>
-            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "new-box", placeholder: "パスワードをもう一度入力してください" %>
-          <% end %>
-        </div>
+          <div class="form-field">
+            <%= f.label :password_confirmation, "パスワード (確認用)" %><br />
+            <% if @user.errors.include?(:password_confirmation) %>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "new-box2", placeholder: @user.errors.full_messages_for(:password_confirmation).first %>
+            <% else %>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "new-box", placeholder: "パスワードをもう一度入力してください" %>
+            <% end %>
+          </div>
 
-        <div class="btn-field">
-          <%= f.submit "新規登録", class: "sign-in-btn" %>
-        </div>
-      <% end %>
-    </div>
-    <div class="footer">
-      ©2022 STUDIO PAGURO
+          <div class="btn-field">
+            <%= f.submit "新規登録", class: "sign-in-btn" %>
+          </div>
+        <% end %>
+      </div>
+      <div class="footer">
+        ©2022 STUDIO PAGURO
+      </div>
     </div>
   </div>
 </div>
