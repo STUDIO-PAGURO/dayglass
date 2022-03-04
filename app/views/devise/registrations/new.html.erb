@@ -18,27 +18,36 @@
           <% end %>
 
           <div class="form-field">
-            <%= f.label :name, "名前 (必須)" %><br />
+            <%= f.label :name, "名前 (必須)" %>
             <% if @user.errors.include?(:name) %>
-              <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "new-box2", placeholder: @user.errors.full_messages_for(:name).first %>
+              <span class="error">
+                <%= @user.errors.full_messages_for(:name).first %>
+              </span>
+              <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "new-box2" %>
             <% else %>
               <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "new-box" %>
             <% end %>
           </div>
 
           <div class="form-field">
-            <%= f.label :account, "アカウント名 (必須・一度登録すると変更できません)" %><br />
+            <%= f.label :account, "アカウント名 (必須・一度登録すると変更できません)" %>
             <% if @user.errors.include?(:account) %>
-              <%= f.text_field :account, autocomplete: "account", class: "new-box2", placeholder: @user.errors.full_messages_for(:account).first %>
+              <span class="error">
+                <%= @user.errors.full_messages_for(:account).first %>
+              </span>
+              <%= f.text_field :account, autocomplete: "account", class: "new-box2", placeholder: "英字・数字・記号のみ" %>
             <% else %>
-              <%= f.text_field :account, autocomplete: "account", class: "new-box" %>
+              <%= f.text_field :account, autocomplete: "account", class: "new-box", placeholder: "英字・数字・記号のみ" %>
             <% end %>
           </div>
           
           <div class="form-field">
-            <%= f.label :email, "Ｅメール (必須)" %><br />
+            <%= f.label :email, "Ｅメール (必須)" %>
             <% if @user.errors.include?(:email) %>
-              <%= f.email_field :email, autocomplete: "email", class: "new-box2", placeholder: @user.errors.full_messages_for(:email).first %>
+              <span class="error">
+                <%= @user.errors.full_messages_for(:email).first %>
+              </span>
+              <%= f.email_field :email, autocomplete: "email", class: "new-box2" %>
             <% else %>
               <%= f.email_field :email, autocomplete: "email", class: "new-box" %>
             <% end %>
@@ -47,19 +56,25 @@
           <div class="form-field">
             <%= f.label :password, "パスワード" %>
             <% if @minimum_password_length %>
-              <em>(<%= @minimum_password_length %>文字以上)</em><br />
+              <em>(<%= @minimum_password_length %>文字以上)</em>
             <% end %>
             <% if @user.errors.include?(:password) %>
-              <%= f.password_field :password, autocomplete: "new-password", class: "new-box2", placeholder: @user.errors.full_messages_for(:password).first %>
+              <span class="error">
+                <%= @user.errors.full_messages_for(:password).first %>
+              </span>
+              <%= f.password_field :password, autocomplete: "new-password", class: "new-box2", placeholder: "英字と数字の両方を含めてください" %>
             <% else %>
               <%= f.password_field :password, autocomplete: "new-password", class: "new-box", placeholder: "英字と数字の両方を含めてください" %>
             <% end %>
           </div>
 
           <div class="form-field">
-            <%= f.label :password_confirmation, "パスワード (確認用)" %><br />
+            <%= f.label :password_confirmation, "パスワード (確認用)" %>
             <% if @user.errors.include?(:password_confirmation) %>
-              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "new-box2", placeholder: @user.errors.full_messages_for(:password_confirmation).first %>
+              <span class="error">
+                <%= @user.errors.full_messages_for(:password_confirmation).first %>
+              </span>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "new-box2", placeholder: "パスワードをもう一度入力してください" %>
             <% else %>
               <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "new-box", placeholder: "パスワードをもう一度入力してください" %>
             <% end %>

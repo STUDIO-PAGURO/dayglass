@@ -22,6 +22,9 @@
                 <%= f.file_field :icon, class: "hidden" %>
               </label>
             </div>
+            <div class="destroy">
+              <%= link_to "アカウント削除", user_path(current_user), method: :delete, class: "account-destroy", data: { confirm: "アカウントを削除すると、アカウントの全ての情報が削除され、元に戻す事はできません。アカウントを削除しますか？"} %>
+            </div>
           </div>
         </div>
         <div class="user-form">
