@@ -35,9 +35,9 @@
               <span class="error">
                 <%= @user.errors.full_messages_for(:account).first %>
               </span>
-              <%= f.text_field :account, autocomplete: "account", class: "new-box2", placeholder: "英字・数字・記号のみ" %>
+              <%= f.text_field :account, autocomplete: "account", class: "new-box2", placeholder: "英字・数字・記号(@ . _ -)のみ" %>
             <% else %>
-              <%= f.text_field :account, autocomplete: "account", class: "new-box", placeholder: "英字・数字・記号のみ" %>
+              <%= f.text_field :account, autocomplete: "account", class: "new-box", placeholder: "英字・数字・記号(@ . _ -)のみ" %>
             <% end %>
           </div>
           
