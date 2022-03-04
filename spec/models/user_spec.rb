@@ -31,6 +31,12 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include("アカウントを入力してください")
       end
 
+      it "accountが英数字、@._-以外の文字を含んでいると登録できない" do
+        @user.account = "あ"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("アカウントは不正な値です")
+      end
+
       it "emailが空では登録できない" do
         @user.email = ""
         @user.valid?
@@ -68,7 +74,7 @@ RSpec.describe User, type: :model do
         @user.save
         another_user = FactoryBot.build(:user, account: @user.account)
         another_user.valid?
-        expect(another_user.errors.full_messages).to include("アカウントは既に存在します")
+        expect(another_user.errors.full_messages).to include("アカウントはすでに存在します")
       end
 
       it "重複したemailが存在する場合登録できない" do
