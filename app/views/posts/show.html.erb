@@ -72,7 +72,11 @@
 
         <div class="comment-form-area">
           <%= form_with(model: [@post, @comment], class: "form", local: true) do |f| %>
-            <%= f.text_area :text, placeholder: "コメントする", rows: "1", class: "comment-form" %>
+            <% if @error_comment.present? %>
+              <%= f.text_area :text, placeholder: @error_comment.errors.full_messages.first, rows: "1", class: "comment-form-error" %>
+            <% else %>
+              <%= f.text_area :text, placeholder: "コメントする", rows: "1", class: "comment-form" %>
+            <% end %>
             <%= f.submit "投稿する", class: "btn" %>
           <% end %>
         </div>

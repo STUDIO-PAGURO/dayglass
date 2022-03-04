@@ -106,6 +106,20 @@ body {
   display: contents;
 }
 
+.comment-form-error {
+  width: 682px;
+  height: 37px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 18px;
+}
+
+.comment-form-error::placeholder {
+  color: red;
+  background-color: lightpink;
+}
+
 /* ログイン画面 */
 
 .background {
