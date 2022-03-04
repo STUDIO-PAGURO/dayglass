@@ -105,6 +105,10 @@ body {
   background-size: cover;
   background-attachment: fixed;
   height: 100vh;
+  position: relative;
+}
+
+.LR {
   display: flex;
 }
 
@@ -124,7 +128,6 @@ body {
 .right-contents {
   width: 50%;
   margin: 100px auto 0;
-  position: relative;
 }
 
 .title-logo {
@@ -204,13 +207,21 @@ body {
   border-radius: 5px;
 }
 
+.forget-area {
+  float: right;
+}
+
+.forget {
+  font-size: 1.4rem;
+}
+
 .footer {
+  width: 50%;
   font-size: 2rem;
   color: #808080;
   position: absolute;
-  top: 92%;
-  left: 50%;
-  transform: translate(-50%, -10%);
+  bottom: 5%;
+  text-align: center;
 }
 
 /* タイムライン */
@@ -784,10 +795,6 @@ footer {
   margin-bottom: 26px;
 }
 
-.password-change {
-  font-size: 1.4rem;
-}
-
 /* タブレット表示時 */
 @media (max-width: 1024px) {
 
@@ -797,6 +804,9 @@ footer {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+  }
+
+  .LR {
     display: block;
   }
 
@@ -834,12 +844,12 @@ footer {
   }
 
   .footer {
+    width: 100%;
     font-size: 2rem;
     color: #808080;
     position: absolute;
-    top: 135%;
-    left: 50%;
-    transform: translate(-50%, -10%);
+    bottom: 5%;
+    text-align: center;
   }
   
   .header-contents {
@@ -992,10 +1002,6 @@ footer {
     border: none;
     border-radius: 5px;
   }
-
-  .password-change {
-    font-size: 1.4rem;
-  }
 }
 
 /* スマホ表示時 */
@@ -1018,7 +1024,6 @@ footer {
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    display: block;
   }
 
   .title-logo img{
@@ -1125,12 +1130,12 @@ footer {
   }
 
   .footer {
-    font-size: 0.8rem;
+    width: 100%;
+    font-size: 1.2rem;
     color: #808080;
     position: absolute;
-    top: 110%;
-    left: 50%;
-    transform: translate(-50%, -10%);
+    text-align: center;
+    bottom: 5%;
   }
 
   .header {
@@ -1171,7 +1176,7 @@ footer {
   }
 
   footer .search-input {
-    width: 290px;
+    width: 250px;
     height: 25px;
     background-color: #999999;
     border: none;
@@ -1179,8 +1184,12 @@ footer {
     padding: 0 10px;
   }
 
+  .sp-sub-contents {
+    font-size: 2rem;
+  }
+
   footer .new-post {
-    font-size: 30px;
+    font-size: 2.6rem;
   }
 
   .main-contents {
@@ -1354,11 +1363,6 @@ footer {
     border: none;
     border-radius: 5px;
     margin-left: 20px;
-  }
-
-  .password-change {
-    font-size: 1.4rem;
-    margin-top: 10px;
   }
 
   .post-form {
