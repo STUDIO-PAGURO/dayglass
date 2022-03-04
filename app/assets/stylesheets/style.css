@@ -28,6 +28,10 @@ a {
   text-decoration: none;
 }
 
+label {
+  font-size: 1.5rem;
+}
+
 body {
   font-family:"Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
   color: #CCCCCC;
@@ -63,11 +67,17 @@ body {
   margin-bottom: 12px;
 }
 
+.error {
+  font-size: 1.5rem;
+  color: red;
+}
+
 .new-box2 {
   width: 428px;
   height: 36px;
   margin-bottom: 12px;
   padding: 0 13px;
+  background-color: lightpink;
 }
 
 .new-box2::placeholder {
@@ -138,18 +148,18 @@ body {
   background-color: #333333;
   width: 506px;
   padding: 46px 39px;
-  margin: 66px auto 0;
+  margin: 50px auto 0;
 }
 
 .new-container {
   background-color: #333333;
   width: 506px;
   padding: 35px 39px;
-  margin: 66px auto 0;
+  margin: 50px auto 0;
 }
 
 .box {
-  width: 428px;
+  width: 100%;
   height: 45px;
   margin-bottom: 12px;
   padding: 0 13px;
@@ -158,7 +168,7 @@ body {
 }
 
 .new-box {
-  width: 428px;
+  width: 100%;
   height: 36px;
   margin-bottom: 12px;
   padding: 0 13px;
@@ -167,7 +177,7 @@ body {
 }
 
 .login-btn {
-  width: 428px;
+  width: 100%;
   height: 45px;
   background-color: #61B6FF;
   color: #333333;
@@ -181,7 +191,7 @@ body {
 }
 
 .sign-in-btn {
-  width: 428px;
+  width: 100%;
   height: 36px;
   background-color: #FF7158;
   color: #333333;
@@ -195,7 +205,7 @@ body {
 }
 
 .registration a {
-  width: 428px;
+  width: 100%;
   height: 45px;
   background-color: #FF7158;
   color: #333333;
@@ -753,6 +763,14 @@ footer {
   cursor: pointer;
 }
 
+.account-destroy {
+  font-size: 1rem;
+  background-color: black;
+  padding: 10px;
+  border-radius: 5px;
+  color: red;
+}
+
 .user-form {
   margin-top: 50px;
 }
@@ -840,6 +858,13 @@ footer {
     background-color: #333333;
     width: 506px;
     padding: 46px 39px;
+    margin: 66px auto 0;
+  }
+
+  .new-container {
+    background-color: #333333;
+    width: 506px;
+    padding: 35px 39px;
     margin: 66px auto 0;
   }
 
@@ -1039,7 +1064,7 @@ footer {
     font-size: 2rem;
     width: 100%;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 10px;
   }
 
   .right-contents {
@@ -1051,19 +1076,19 @@ footer {
     background-color: #333333;
     width: 300px;
     padding: 40px 35px;
-    margin: 66px auto 0;
+    margin: 40px auto 0;
   }
 
   .new-container {
     background-color: #333333;
     width: 300px;
-    padding: 35px 35px;
-    margin: 66px auto 0;
+    padding: 35px 30px;
+    margin: 40px auto 0;
     font-size: 1.2rem;
   }
 
   .box {
-    width: 230px;
+    width: 100%;
     height: 35px;
     margin-bottom: 12px;
     padding: 0 10px;
@@ -1072,7 +1097,7 @@ footer {
   }
 
   .new-box {
-    width: 230px;
+    width: 100%;
     height: 30px;
     margin-bottom: 12px;
     padding: 0 10px;
@@ -1081,7 +1106,7 @@ footer {
   }
 
   .new-box2 {
-    width: 230px;
+    width: 100%;
     height: 30px;
     margin-bottom: 12px;
     padding: 0 10px;
@@ -1094,7 +1119,7 @@ footer {
   }
 
   .login-btn {
-    width: 230px;
+    width: 100%;
     height: 45px;
     background-color: #61B6FF;
     color: #333333;
@@ -1108,7 +1133,7 @@ footer {
   }
 
   .sign-in-btn {
-    width: 230px;
+    width: 100%;
     height: 36px;
     background-color: #FF7158;
     color: #333333;
@@ -1121,7 +1146,7 @@ footer {
   }
 
   .registration a {
-    width: 230px;
+    width: 100%;
     height: 45px;
     background-color: #FF7158;
     border-radius: 5px;
@@ -1318,6 +1343,16 @@ footer {
     height: 44px;
     border-radius: 50%;
     margin: 0;
+  }
+
+  .account-destroy {
+    font-size: 1rem;
+    background-color: black;
+    padding: 5px;
+    border-radius: 5px;
+    color: red;
+    float: right;
+    margin-top: 15px;
   }
 
   .upper-profile-area {
