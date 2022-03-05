@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  resources :users, only: [:index, :show, :edit, :update]
+  resources :users, only: [:index, :show, :edit, :update, :destroy]
   
   post 'follow/:id', to: 'relationships#follow', as: 'follow'
   post 'unfollow/:id', to: 'relationships#unfollow', as: 'unfollow'

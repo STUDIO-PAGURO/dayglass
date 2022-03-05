@@ -47,6 +47,12 @@ class UsersController < ApplicationController
     @recommendation_users = User.where.not(id: current_user.id).where.not(id: own_followings).order("RAND()").limit(5)
   end
 
+  def destroy
+    user = User.find(params[:id])
+    user.destroy
+    redirect_to root_path
+  end
+
   private
 
   def user_params
