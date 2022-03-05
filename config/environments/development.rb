@@ -41,8 +41,8 @@ Rails.application.configure do
     :address => "smtp.gmail.com",
     :port => 587,
     :domain => 'smtp.gmail.com',
-    :user_name => Rails.application.credentials.google[:GOOGLE_MALE_ADDRESS],
-    :password => Rails.application.credentials.google[:GOOGLE_MALER_PASSWORD],
+    :user_name => Rails.application.credentials.google[:GOOGLE_MAIL_ADDRESS],
+    :password => Rails.application.credentials.google[:GOOGLE_MAILER_PASSWORD],
     :authentication => 'login'
   }
 

@@ -410,7 +410,7 @@ body {
 }
 
 .content-post {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .text {
@@ -439,7 +439,7 @@ footer {
 
 .detailed-content_post {
   font-size: 1.8rem;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   word-break: break-word;
 }
 
@@ -722,7 +722,7 @@ footer {
 
 .comment-area {
   display: flex;
-  margin-top: 29px;
+  margin-top: 20px;
 }
 
 .comment {

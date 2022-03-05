@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :comment do
-    text {Faler::Lorem.sentence}
+    text {Faker::Lorem.sentence}
     association :user
     association :post
   end
