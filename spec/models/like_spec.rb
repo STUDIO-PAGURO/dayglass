@@ -35,6 +35,13 @@ RSpec.describe Like, type: :model do
         another_user = FactoryBot.create(:like, user_id: @like.user_id)
         expect(another_user).to be_valid
       end
+
+      it "post_idとuser_idは一意でなければ保存できない" do
+        @like.save
+        like2 = FactoryBot.build(:like, post_id: @like.post_id, user_id: @like.user_id)
+        like2.valid?
+        expect(like2.errors.full_messages).to include("Postはすでに存在します")
+      end
     end
   end
 end

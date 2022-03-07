@@ -32,7 +32,7 @@ RSpec.describe User, type: :model do
       end
 
       it "accountが英数字、@._-以外の文字を含んでいると登録できない" do
-        @user.account = "あ"
+        @user.account = "ああああああ"
         @user.valid?
         expect(@user.errors.full_messages).to include("アカウントは不正な値です")
       end
@@ -70,6 +70,10 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include("パスワード(確認用)とパスワードの入力が一致しません")
       end
 
+      it "パスワードが暗号化されている" do
+        expect(@user.encrypted_password).to_not eq "password"
+      end
+
       it "重複したaccountが存在する場合登録できない" do
         @user.save
         another_user = FactoryBot.build(:user, account: @user.account)
@@ -83,6 +87,26 @@ RSpec.describe User, type: :model do
         another_user.valid?
         expect(another_user.errors.full_messages).to include("Eメールはすでに存在します")
       end
+    end
+  end
+
+  describe "フォローの検証" do
+    it "ユーザーが他のユーザーをフォロー、フォロー解除可能である" do
+      user1 = FactoryBot.create(:user)
+      user2 = FactoryBot.create(:user)
+      user1.follow(user2.id)
+      expect(user1.following?(user2)).to eq true
+      user1.unfollow(user2.id)
+      expect(user1.following?(user2)).to eq false
+    end
+
+    it "フォロー中のユーザーが削除されると、フォローが解消される" do
+      user1 = FactoryBot.create(:user)
+      user2 = FactoryBot.create(:user)
+      user1.follow(user2.id)
+      expect(user1.following?(user2)).to eq true
+      user1.destroy
+      expect(user1.following?(user2)).to eq false
     end
   end
 end
