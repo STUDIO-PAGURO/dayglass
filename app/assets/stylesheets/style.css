@@ -145,7 +145,7 @@ body {
   font-weight: bold;
   color: #FFFFFF;
   line-height: 125%;
-  text-shadow: 0 0 5px rgb(0 0 0 / 90%);
+  text-shadow: 0 0 5px black;
   width: 560px;
 }
 
