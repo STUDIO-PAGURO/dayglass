@@ -6,7 +6,7 @@
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
-    <%= favicon_link_tag("favicon.ico") %>
+    <%= favicon_link_tag "favicon.ico" %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -17,7 +17,9 @@
         <header class="header">
           <div class="header-contents">
             <div class="left-header">
-              <%= link_to image_tag("logo.png", class: "logo"), "/" %>
+              <%= link_to root_path do %>
+                <%= image_tag "logo.png", class: "logo" %>
+              <% end %>
               <%= form_with url: search_posts_path, local: true, method: :get, class: "search-form" do |f| %>
                 <%= f.text_field :keyword, placeholder: "検索", class: "search-input" %>
                 <% f.submit %>
