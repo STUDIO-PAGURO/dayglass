@@ -21,7 +21,7 @@ class User < ApplicationRecord
   VALID_ACCOUNT_REGEX = /\A[\w\d.@_-]+\z/i
   validates :account, format: { with: VALID_ACCOUNT_REGEX }
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
-  validates_format_of :password, with: PASSWORD_REGEX, message: "には英字と数字の両方を含めて設定してください",  on: [:create, :update]
+  validates_format_of :password, with: PASSWORD_REGEX, message: "には英字と数字の両方を含めて設定してください",  on: :create
 
   def follow(user_id)
     follower.create(followed_id: user_id)
