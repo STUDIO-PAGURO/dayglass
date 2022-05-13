@@ -72,11 +72,11 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     :enable_starttls_auto => true,
     :address => "smtp.gmail.com",
-    :port => 587,
-    :domain => 'smtp.gmail.com',
+    :port => '587',
+    :domain => 'gmail.com',
     :user_name => Rails.application.credentials.google[:GOOGLE_MAIL_ADDRESS],
     :password => Rails.application.credentials.google[:GOOGLE_MAILER_PASSWORD],
-    :authentication => 'plain'
+    :authentication => :plain
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
