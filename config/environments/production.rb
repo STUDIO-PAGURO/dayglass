@@ -76,7 +76,7 @@ Rails.application.configure do
     :domain => 'smtp.gmail.com',
     :user_name => Rails.application.credentials.google[:GOOGLE_MAIL_ADDRESS],
     :password => Rails.application.credentials.google[:GOOGLE_MAILER_PASSWORD],
-    :authentication => 'login'
+    :authentication => 'plain'
   }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
